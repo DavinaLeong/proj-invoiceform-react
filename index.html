@@ -31,7 +31,7 @@
                 <h2 id="form-invoice-header" class="mb-3">Invoice</h2>
 
                 <form id="form-invoice">
-                    <table id="form-invoice-table" class="table table-borderless">
+                    <table id="form-invoice-table-company" class="table table-borderless">
                         <tr>
                             <td><label for="company">Company</label></td>
                             <td><input id="company" name="company" type="text" class="form-control" required></td>
@@ -46,26 +46,126 @@
                             <td><label for="date">Date</label></td>
                             <td><input id="date" name="date" type="date" class="form-control" placeholder="DD-MM-YYYY" required></td>
                         </tr>
+                    </table><!-- ./form-invoice-table-company -->
+
+                    <table id="form-invoice-table-maindetails" class="table table-borderless">
+                        <thead class="bg-primary text-light">
                         <tr>
-                            <td colspan="2">
-                                <div class="form-group">
-                                    <label for="soldTo">Sold To</label>
-                                    <textarea id="soldTo" name="soldTo" class="form-control"
-                                        rows="3" require></textarea>
-                                </div>
+                            <th><label for="soldTo">Sold To</label></th>
+                            <th><label for="shipTo">Ship To</label></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <textarea id="soldTo" name="soldTo" class="form-control"
+                                    rows="3" require></textarea>
                             </td>
-                            <td colspan="2">
-                                <div class="form-group">
-                                    <label for="shipTo">Ship To</label>
-                                    <textarea id="shipTo" name="shipTo" class="form-control"
-                                        rows="3" require></textarea>
-                                </div>
+                            <td>
+                                <textarea id="shipTo" name="shipTo" class="form-control"
+                                    rows="3" require></textarea>
                             </td>
                         </tr>
+                        </tbody>
+                    </table><!-- ./form-invoice-table-maindetails -->
+
+                    <table id="form-invoice-table-otherdetails" class="table table-borderless">
+                        <thead class="bg-primary text-light">
                         <tr>
-                            
+                            <th><label for="salesPerson">Sales Person</label></th>
+                            <th><label for="poNo">P.O. No.</label></th>
+                            <th><label for="shippedDate">Shipped Date</label></th>
+                            <th><label for="shipment">Shipment</label></th>
+                            <th><label for="terms">Terms</label></th>
+                            <th><label for="reference">Reference</label></th>
                         </tr>
-                    </table>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input id="salesPerson" name="salesPerson" class="form-control" required></td>
+                            <td><input id="poNo" name="poNo" class="form-control" required></td>
+                            <td><input id="shippedDate" name="shippedDate" class="form-control" required></td>
+                            <td><input id="shipment" name="shipment" class="form-control" required></td>
+                            <td><input id="terms" name="terms" class="form-control" required></td>
+                            <td><input id="reference" name="reference" class="form-control" required></td>
+                        </tr>
+                        </tbody>
+                    </table><!-- ./form-invoice-table-otherdetails -->
+
+                    <table id="form-invoice-table-lineitems" class="table">
+                        <thead class="bg-primary text-light">
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Amount</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr id="tr-ili-0">
+                            <td><input id="item0" name="item0" type="text" class="form-control" required></td>
+                            <td><input id="qty0" name="qty0" type="number" step="1" min="1" max="1000" class="form-control" required></td>
+                            <td><input id="unitPrice0" name="unitPrice0" class="form-control" step="0.01" required></td>
+                            <td><p id="amount0" class="form-control-plaintext">0.00</p></td>
+                            <td><button id="remove0" name="remove0" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
+                        </tr>
+                        <tr id="tr-ili-1">
+                            <td><input id="item1" name="item1" type="text" class="form-control" required></td>
+                            <td><input id="qty1" name="qty1" type="number" step="1" min="1" max="1000" class="form-control" required></td>
+                            <td><input id="unitPrice1" name="unitPrice1" class="form-control" step="0.01" required></td>
+                            <td><p id="amount1" class="form-control-plaintext">0.00</p></td>
+                            <td><button id="remove1" name="remove1" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
+                        </tr>
+                        <tr id="tr-ili-2">
+                            <td><input id="item2" name="item2" type="text" class="form-control" required></td>
+                            <td><input id="qty2" name="qty2" type="number" step="1" min="1" max="1000" class="form-control" required></td>
+                            <td><input id="unitPrice2" name="unitPrice2" class="form-control" step="0.01" required></td>
+                            <td><p id="amount2" class="form-control-plaintext">0.00</p></td>
+                            <td><button id="remove2" name="remove2" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
+                        </tr>
+                        <tr id="tr-ili-3">
+                            <td><input id="item3" name="item3" type="text" class="form-control" required></td>
+                            <td><input id="qty3" name="qty3" type="number" step="1" min="1" max="1000" class="form-control" required></td>
+                            <td><input id="unitPrice3" name="unitPrice3" class="form-control" step="0.01" required></td>
+                            <td><p id="amount3" class="form-control-plaintext">0.00</p></td>
+                            <td><button id="remove3" name="remove3" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
+                        </tr>
+                        <tr id="tr-ili-4">
+                            <td><input id="item4" name="item4" type="text" class="form-control" required></td>
+                            <td><input id="qty4" name="qty4" type="number" step="1" min="1" max="1000" class="form-control" required></td>
+                            <td><input id="unitPrice4" name="unitPrice4" class="form-control" step="0.01" required></td>
+                            <td><p id="amount4" class="form-control-plaintext">0.00</p></td>
+                            <td><button id="remove4" name="remove4" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
+                        </tr>
+                        </tbody>
+                    </table><!-- ./form-invoice-table-lineitems -->
+
+                    <table id="form-invoice-table-total" class="table table-borderless">
+                        <tr>
+                            <td rowspan="5">
+                                <label for="remarks">Remarks</label>
+                                <textarea id="remarks" name="remarks" rows="4" class="form-control"></textarea>
+                            </td>
+                        </tr>    
+                        <tr>
+                            <td class="bg-primary text-light">Subtotal</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-light">Processing Fees</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-light">Taxes</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-light">Total</td>
+                            <td>0.00</td>
+                        </tr>
+                    </table><!-- ./form-invoice-table-total -->
+
                 </form>
 
                 <footer class="mt-2 pb-3 small text-secondary text-right font-italic">React Invoice Form, Davina Leong 2018</footer>
