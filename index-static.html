@@ -9,7 +9,15 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <link rel="icon" href="./images/icon.png" type="image/png">
     <title>Invoice Form</title>
+
+    <style>
+    .bg-secondary-light {
+        background-color: #eee;
+    }
+    </style>
 </head>
 <body>
     <div class="container-fluid my-2">
@@ -49,7 +57,7 @@
                     </table><!-- ./form-invoice-table-company -->
 
                     <table id="form-invoice-table-maindetails" class="table table-borderless">
-                        <thead class="bg-primary text-light">
+                        <thead class="bg-secondary-light text-secondary">
                         <tr>
                             <th><label for="soldTo">Sold To</label></th>
                             <th><label for="shipTo">Ship To</label></th>
@@ -70,7 +78,7 @@
                     </table><!-- ./form-invoice-table-maindetails -->
 
                     <table id="form-invoice-table-otherdetails" class="table table-borderless">
-                        <thead class="bg-primary text-light">
+                        <thead class="bg-secondary-light text-secondary">
                         <tr>
                             <th><label for="salesPerson">Sales Person</label></th>
                             <th><label for="poNo">P.O. No.</label></th>
@@ -92,8 +100,8 @@
                         </tbody>
                     </table><!-- ./form-invoice-table-otherdetails -->
 
-                    <table id="form-invoice-table-lineitems" class="table">
-                        <thead class="bg-primary text-light">
+                    <table id="form-invoice-table-lineitems" class="table table-striped">
+                        <thead class="bg-secondary-light text-secondary">
                         <tr>
                             <th>Item</th>
                             <th>Qty</th>
@@ -149,19 +157,19 @@
                             </td>
                         </tr>    
                         <tr>
-                            <td class="bg-primary text-light">Subtotal</td>
+                            <td class="bg-secondary-light text-secondary">Subtotal</td>
                             <td>0.00</td>
                         </tr>
                         <tr>
-                            <td class="bg-primary text-light">Processing Fees</td>
+                            <td class="bg-secondary-light text-secondary">Processing Fees</td>
                             <td>0.00</td>
                         </tr>
                         <tr>
-                            <td class="bg-primary text-light">Taxes</td>
+                            <td class="bg-secondary-light text-secondary">Taxes</td>
                             <td>0.00</td>
                         </tr>
                         <tr>
-                            <td class="bg-primary text-light">Total</td>
+                            <td class="bg-secondary-light text-secondary">Total</td>
                             <td>0.00</td>
                         </tr>
                     </table><!-- ./form-invoice-table-total -->
