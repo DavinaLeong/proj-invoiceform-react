@@ -12,6 +12,8 @@
   "author": "Davina Leong <davina.leong@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "moment": "~2.22.2",
+    "numeral": "~2.0.6",
     "popper.js": "~1.14.4",
     "react": "~16.5.2",
     "react-dom": "~16.5.2"
