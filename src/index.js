@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './components/App.jsx';
+import App from './App.jsx';
 
-ReactDom.render(<App />, document.getElementById('app'));
+import invoices from './sample-invoices';
+
+ReactDom.render(<App invoices={invoices} />, document.getElementById('app'));
