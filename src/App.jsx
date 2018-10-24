@@ -40,12 +40,6 @@ class App extends Component {
         }
     }
 
-    handleClickNewInvoiceItem() {
-        this.setState({
-            selectedInvoice: null
-        });
-    }
-
     render() {
         const newInvoiceItemClass = this.state.selectedInvoice ? 'list-group-item list-group-item-action' : 'list-group-item list-group-item-action active';
 
