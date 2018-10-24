@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { throws } from 'assert';
 
 class InvoiceListItem extends Component {
 
     render() {
         return (
-            <a href={this.props.href} className="list-group-item list-group-item-action">{ this.props.invoiceNo }</a>
+            <a href={this.props.href} className="list-group-item list-group-item-action" onClick={this.props.handleClickInvoiceItem}>{ this.props.invoiceNo }</a>
         );
     }
 

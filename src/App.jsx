@@ -10,22 +10,33 @@ class App extends Component {
 
         this.state = {
             formState: enums.formState.entry,
+            invoices: this.props.invoices,
             selectedInvoice: null
         };
-
-        this.fnClearSelectedInvoice = this.clearSelectedInvoiceHandler.bind(this);
     }
 
     componentInvoiceListItems(invoices) {
-        return invoices.map((invoice, index) => {
+        return invoices.map((invoice) => {
             return (
-                <InvoiceListItem key={ invoice.id } href="#" invoiceNo={invoice.invoiceNo} />
+                <InvoiceListItem key={ invoice.id } href="#" invoiceNo={invoice.invoiceNo} handleClickInvoiceItem={this.handleClickInvoiceItem.bind(this, invoice.id)} />
             );
         });
     }
 
-    clearSelectedInvoiceHandler() {
-        console.log('TRIGGERED: clearSelectedInvoiceHandler');
+    handleClickInvoiceItem(id) {
+        console.log(`id: ${id}`);
+        if (id) {
+            this.setState({
+                selectedInvoice: this.state.invoices.find(invoice => invoice.id === id)
+            });
+        } else {
+            this.setState({
+                selectedInvoice: null
+            });
+        }
+    }
+
+    handleClickNewInvoiceItem() {
         this.setState({
             selectedInvoice: null
         });
@@ -36,7 +47,7 @@ class App extends Component {
             <div className="row">
                 <div id="sidebar" className="col-3">
                     <div id="list-invoice" className="list-group mb-3">
-                        <a href="#" className="list-group-item list-group-item-action active" onClick={this.fnClearSelectedInvoice}>New Invoice</a>
+                        <a href="#" className="list-group-item list-group-item-action active" onClick={this.handleClickInvoiceItem.bind(this, null)}>New Invoice</a>
                         { this.componentInvoiceListItems(this.props.invoices) }
                     </div>
                     <h6>Form state: <span className="badge badge-info">{ this.state.formState.toUpperCase() }</span></h6>
