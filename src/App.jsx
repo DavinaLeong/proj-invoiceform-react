@@ -18,13 +18,17 @@ class App extends Component {
     componentInvoiceListItems(invoices) {
         return invoices.map((invoice) => {
             return (
-                <InvoiceListItem key={ invoice.id } href="#" invoiceNo={invoice.invoiceNo} handleClickInvoiceItem={this.handleClickInvoiceItem.bind(this, invoice.id)} />
+                <InvoiceListItem
+                    key={ invoice.id }
+                    href="#"
+                    invoiceNo={invoice.invoiceNo}
+                    isActiveItem={(this.state.selectedInvoice && this.state.selectedInvoice.id) === invoice.id}
+                    handleClickInvoiceItem={this.handleClickInvoiceItem.bind(this, invoice.id)} />
             );
         });
     }
 
     handleClickInvoiceItem(id) {
-        console.log(`id: ${id}`);
         if (id) {
             this.setState({
                 selectedInvoice: this.state.invoices.find(invoice => invoice.id === id)
@@ -43,11 +47,13 @@ class App extends Component {
     }
 
     render() {
+        const newInvoiceItemClass = this.state.selectedInvoice ? 'list-group-item list-group-item-action' : 'list-group-item list-group-item-action active';
+
         return (
             <div className="row">
                 <div id="sidebar" className="col-3">
                     <div id="list-invoice" className="list-group mb-3">
-                        <a href="#" className="list-group-item list-group-item-action active" onClick={this.handleClickInvoiceItem.bind(this, null)}>New Invoice</a>
+                        <a href="#" className={newInvoiceItemClass} onClick={this.handleClickInvoiceItem.bind(this, null)}>New Invoice</a>
                         { this.componentInvoiceListItems(this.props.invoices) }
                     </div>
                     <h6>Form state: <span className="badge badge-info">{ this.state.formState.toUpperCase() }</span></h6>
