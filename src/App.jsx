@@ -55,7 +55,112 @@ class App extends Component {
 
                 <div id="invoice" className="col-9">
                     <h2 className="mb-3">Invoice</h2>
-                    <div><em>form here</em></div>
+                    
+                    <form id="form-invoice">
+                        <table id="form-invoice-table-company" className="table table-borderless">
+                            <tr>
+                                <td><label htmlFor="company">Company</label></td>
+                                <td><input id="company" name="company" type="text" className="form-control" required /></td>
+
+                                <td><label htmlFor="invoiceNo">Invoice No.</label></td>
+                                <td><input id="invoiceNo" name="invoiceNo" type="text" className="form-control" required /></td>
+                            </tr>
+                            <tr>
+                                <td><label htmlFor="address">Address</label></td>
+                                <td><textarea id="address" name="address" className="form-control" rows="2" required></textarea></td>
+
+                                <td><label htmlFor="date">Date</label></td>
+                                <td><input id="date" name="date" type="date" className="form-control" placeholder="DD-MM-YYYY" required /></td>{/* ./form-invoice-table-company */}
+                            </tr>
+                        </table>
+
+                        <table id="form-invoice-table-maindetails" className="table table-borderless">
+                            <thead className="bg-secondary-light text-secondary">
+                            <tr>
+                                <th><label htmlFor="soldTo">Sold To</label></th>
+                                <th><label htmlFor="shipTo">Ship To</label></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <textarea id="soldTo" name="soldTo" className="form-control"
+                                        rows="3" require></textarea>
+                                </td>
+                                <td>
+                                    <textarea id="shipTo" name="shipTo" className="form-control"
+                                        rows="3" require></textarea>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>{/* ./form-invoice-table-maindetails */}
+
+                        <table id="form-invoice-table-otherdetails" className="table table-borderless">
+                            <thead className="bg-secondary-light text-secondary">
+                            <tr>
+                                <th><label htmlFor="salesPerson">Sales Person</label></th>
+                                <th><label htmlFor="poNo">P.O. No.</label></th>
+                                <th><label htmlFor="shippedDate">Shipped Date</label></th>
+                                <th><label htmlFor="shipment">Shipment</label></th>
+                                <th><label htmlFor="terms">Terms</label></th>
+                                <th><label htmlFor="reference">Reference</label></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input id="salesPerson" name="salesPerson" className="form-control" required /></td>
+                                <td><input id="poNo" name="poNo" className="form-control" required /></td>
+                                <td><input id="shippedDate" name="shippedDate" className="form-control" required /></td>
+                                <td><input id="shipment" name="shipment" className="form-control" required /></td>
+                                <td><input id="terms" name="terms" className="form-control" required /></td>
+                                <td><input id="reference" name="reference" className="form-control" required /></td>
+                            </tr>
+                            </tbody>
+                        </table>{/* ./form-invoice-table-otherdetails */}
+
+                        <table id="form-invoice-table-lineitems" className="table table-striped">
+                        <thead className="bg-secondary-light text-secondary">
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Amount</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        </thead>
+                            <tbody>
+                            </tbody>
+                        </table>{/* ./form-invoice-table-lineitems */}
+
+                        <table id="form-invoice-table-total" className="table table-borderless">
+                            <tr>
+                                <td rowspan="5">
+                                    <label htmlFor="remarks">Remarks</label>
+                                    <textarea id="remarks" name="remarks" rows="4" className="form-control"></textarea>
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td className="bg-secondary-light text-secondary">Subtotal</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td className="bg-secondary-light text-secondary">Processing Fees</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td className="bg-secondary-light text-secondary">Taxes</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td className="bg-secondary-light text-secondary">Total</td>
+                                <td>0.00</td>
+                            </tr>
+                        </table>{/* ./form-invoice-table-total */}
+
+                        <div className="text-right">
+                            <button id="form-btn-submit" className="btn btn-primary" type="button">Submit <i className="fas fa-check fa-fw"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         );
