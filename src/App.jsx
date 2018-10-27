@@ -11,7 +11,7 @@ class App extends Component {
         this.state = {
             formState: enums.formState.entry,
             invoices: this.props.invoices,
-            selectedInvoice: null
+            selectedInvoice: this.props.defaultInvoice
         };
     }
 
@@ -35,7 +35,7 @@ class App extends Component {
             });
         } else {
             this.setState({
-                selectedInvoice: null
+                selectedInvoice: this.props.defaultInvoice
             });
         }
     }
@@ -58,6 +58,7 @@ class App extends Component {
                     
                     <form id="form-invoice">
                         <table id="form-invoice-table-company" className="table table-borderless">
+                            <tbody>
                             <tr>
                                 <td><label htmlFor="company">Company</label></td>
                                 <td><input id="company" name="company" type="text" className="form-control" required /></td>
@@ -72,6 +73,7 @@ class App extends Component {
                                 <td><label htmlFor="date">Date</label></td>
                                 <td><input id="date" name="date" type="date" className="form-control" placeholder="DD-MM-YYYY" required /></td>{/* ./form-invoice-table-company */}
                             </tr>
+                            </tbody>
                         </table>
 
                         <table id="form-invoice-table-maindetails" className="table table-borderless">
@@ -85,11 +87,11 @@ class App extends Component {
                             <tr>
                                 <td>
                                     <textarea id="soldTo" name="soldTo" className="form-control"
-                                        rows="3" require></textarea>
+                                        rows="3" required></textarea>
                                 </td>
                                 <td>
                                     <textarea id="shipTo" name="shipTo" className="form-control"
-                                        rows="3" require></textarea>
+                                        rows="3" required></textarea>
                                 </td>
                             </tr>
                             </tbody>
@@ -133,28 +135,30 @@ class App extends Component {
                         </table>{/* ./form-invoice-table-lineitems */}
 
                         <table id="form-invoice-table-total" className="table table-borderless">
+                            <tbody>
                             <tr>
-                                <td rowspan="5">
+                                <td rowSpan="5">
                                     <label htmlFor="remarks">Remarks</label>
                                     <textarea id="remarks" name="remarks" rows="4" className="form-control"></textarea>
                                 </td>
                             </tr>    
                             <tr>
                                 <td className="bg-secondary-light text-secondary">Subtotal</td>
-                                <td>0.00</td>
+                                <td>{ this.state.selectedInvoice.subtotal }</td>
                             </tr>
                             <tr>
                                 <td className="bg-secondary-light text-secondary">Processing Fees</td>
-                                <td>0.00</td>
+                                <td>{ this.state.selectedInvoice.processingFees }</td>
                             </tr>
                             <tr>
                                 <td className="bg-secondary-light text-secondary">Taxes</td>
-                                <td>0.00</td>
+                                <td>{ this.state.selectedInvoice.taxes }</td>
                             </tr>
                             <tr>
                                 <td className="bg-secondary-light text-secondary">Total</td>
-                                <td>0.00</td>
+                                <td>{ this.state.selectedInvoice.total }</td>
                             </tr>
+                            </tbody>
                         </table>{/* ./form-invoice-table-total */}
 
                         <div className="text-right">
