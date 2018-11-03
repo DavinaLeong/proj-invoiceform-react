@@ -4,7 +4,7 @@ export default [
         invoiceNo: "20180916",
         company: "Grocer Co.",
         address: "73 Bras Basah, 07-01\nSingapore 470765",
-        date: "2018-09-16",
+        date: "16/09/2018",
         soldTo: "John Doe F. C.",
         shipTo: "10 Biopolis Way #03-03/04 CHROMOS, BIOPOLIS\nSingapore 138670",
         subtotal: "18.10",
@@ -40,7 +40,7 @@ export default [
     }, {
         id: 2,
         invoiceNo: "20181015",
-        date: "2018-10-15",
+        date: "10/15/2018",
         soldTo: "Fang ZhenKang",
         lineItems: []
     }
