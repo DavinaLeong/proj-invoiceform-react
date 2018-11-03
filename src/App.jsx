@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import InvoiceListItem from './components/InvoiceListItem.jsx';
 import enums from './enums';
 
+/**
+ * The parent component which holds and monitors all necessary
+ * props and states that the children components need.
+ */
 class App extends Component {
 
     constructor(props) {
@@ -15,6 +19,11 @@ class App extends Component {
         };
     }
 
+    /**
+     * Takes in aa array of Invoices and returns them as an array of
+     * InvoiceListItem components.
+     * @param {Object[]} invoices - List of invoices on the sidebar
+     */
     componentInvoiceListItems(invoices) {
         return invoices.map((invoice) => {
             return (
@@ -28,6 +37,11 @@ class App extends Component {
         });
     }
 
+    /**
+     * Updates the selectedInvoice in the state
+     * with the currently clicked invoice item.
+     * @param {number} id - The id of the sidebar invoice item clicked
+     */
     handleClickInvoiceItem(id) {
         if (id) {
             this.setState({
