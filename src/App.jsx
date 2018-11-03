@@ -54,8 +54,29 @@ class App extends Component {
         }
     }
 
+    /**
+     * Updates the values of the selectedInvoice.
+     * @param {*} value - The value of the field to be updated
+     * @param {string} field - The name of the field to update
+     */
+    updateSelectedInvoice(value, field) {
+        const selectedInvoice = this.state.selectedInvoice;
+        selectedInvoice[field] = value;
+        this.setState({ selectedInvoice: selectedInvoice});
+    }
+
+    /**
+     * Handles the onChange event of Company field.
+     * @param {*} event 
+     */
+    handleCompanyChange(event) {
+        this.updateSelectedInvoice(event.target.value, 'company');
+    }
+
     render() {
-        const newInvoiceItemClass = this.state.selectedInvoice ? 'list-group-item list-group-item-action' : 'list-group-item list-group-item-action active';
+        const newInvoiceItemClass = (this.state.selectedInvoice.id === null) ?
+            'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action';
+        const selectedInvoice = this.state.selectedInvoice;
 
         return (
             <div className="row">
@@ -75,7 +96,8 @@ class App extends Component {
                             <tbody>
                             <tr>
                                 <td><label htmlFor="company">Company</label></td>
-                                <td><input id="company" name="company" type="text" className="form-control" required /></td>
+                                <td><input id="company" name="company" type="text" className="form-control" required
+                                    value={selectedInvoice.company} onChange={this.handleCompanyChange.bind(this)} /></td>
 
                                 <td><label htmlFor="invoiceNo">Invoice No.</label></td>
                                 <td><input id="invoiceNo" name="invoiceNo" type="text" className="form-control" required /></td>
@@ -85,7 +107,7 @@ class App extends Component {
                                 <td><textarea id="address" name="address" className="form-control" rows="2" required></textarea></td>
 
                                 <td><label htmlFor="date">Date</label></td>
-                                <td><input id="date" name="date" type="date" className="form-control" placeholder="DD-MM-YYYY" required /></td>{/* ./form-invoice-table-company */}
+                                <td><input id="date" name="date" type="date" className="form-control" placeholder="DD/MM/YYYY" required /></td>{/* ./form-invoice-table-company */}
                             </tr>
                             </tbody>
                         </table>
