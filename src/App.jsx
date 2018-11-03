@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import InvoiceListItem from './components/InvoiceListItem.jsx';
 import enums from './enums';
+import omittedFields from './omitted-fields';
+import formats from './formats';
 
 /**
  * The parent component which holds and monitors all necessary
@@ -73,7 +75,7 @@ class App extends Component {
      */
     handleFormFieldChange(event) {
         console.log('form field: ', event.target.name);
-        if (! this.props.omittedFieldsUpdate.includes(event.target.name)) {
+        if (! omittedFields.includes(event.target.name)) {
             this.updateSelectedInvoice(event.target.name, event.target.value);
         }
     }
@@ -110,12 +112,15 @@ class App extends Component {
                             </tr>
                             <tr>
                                 <td><label htmlFor="address">Address</label></td>
-                                <td><textarea id="address" name="address" className="form-control" rows="2" required
-                                    value={selectedInvoice.address}
+                                <td><textarea id="address" name="address" className="form-control" rows="2"
+                                    required value={selectedInvoice.address}
                                     onChange={this.handleFormFieldChange}></textarea></td>
 
                                 <td><label htmlFor="date">Date</label></td>
-                                <td><input id="date" name="date" type="date" className="form-control" placeholder="DD/MM/YYYY" required /></td>{/* ./form-invoice-table-company */}
+                                <td><input id="date" name="date" type="text" className="form-control"
+                                    placeholder="DD/MM/YYYY" required
+                                    value={selectedInvoice.date}
+                                    onChange={this.handleFormFieldChange} /></td>{/* ./form-invoice-table-company */}
                             </tr>
                             </tbody>
                         </table>
@@ -130,39 +135,59 @@ class App extends Component {
                             <tbody>
                             <tr>
                                 <td>
-                                    <textarea id="soldTo" name="soldTo" className="form-control"
-                                        rows="3" required></textarea>
+                                    <textarea id="soldTo" name="soldTo" className="form-control" rows="3"
+                                        required value={selectedInvoice.soldTo}
+                                        onChange={this.handleFormFieldChange}></textarea>
                                 </td>
                                 <td>
-                                    <textarea id="shipTo" name="shipTo" className="form-control"
-                                        rows="3" required></textarea>
+                                    <textarea id="shipTo" name="shipTo" className="form-control" rows="3"
+                                        required value={selectedInvoice.shipTo}
+                                        onChange={this.handleFormFieldChange}></textarea>
                                 </td>
                             </tr>
                             </tbody>
                         </table>{/* ./form-invoice-table-maindetails */}
+                        <hr/>
 
                         <table id="form-invoice-table-otherdetails" className="table table-borderless">
-                            <thead className="bg-secondary-light text-secondary">
-                            <tr>
-                                <th><label htmlFor="salesPerson">Sales Person</label></th>
-                                <th><label htmlFor="poNo">P.O. No.</label></th>
-                                <th><label htmlFor="shippedDate">Shipped Date</label></th>
-                                <th><label htmlFor="shipment">Shipment</label></th>
-                                <th><label htmlFor="terms">Terms</label></th>
-                                <th><label htmlFor="reference">Reference</label></th>
-                            </tr>
-                            </thead>
                             <tbody>
                             <tr>
-                                <td><input id="salesPerson" name="salesPerson" className="form-control" required /></td>
-                                <td><input id="poNo" name="poNo" className="form-control" required /></td>
-                                <td><input id="shippedDate" name="shippedDate" className="form-control" required /></td>
-                                <td><input id="shipment" name="shipment" className="form-control" required /></td>
-                                <td><input id="terms" name="terms" className="form-control" required /></td>
-                                <td><input id="reference" name="reference" className="form-control" required /></td>
+                                <td><label htmlFor="salesPerson">Sales Person</label></td>
+                                <td><input id="salesPerson" name="salesPerson" type="text" className="form-control"
+                                    required value={selectedInvoice.salesPerson}
+                                    onChange={this.handleFormFieldChange} /></td>
+
+                                <td><label htmlFor="poNo">P.O. No.</label></td>
+                                <td><input id="poNo" name="poNo" type="text" className="form-control"
+                                    required value={selectedInvoice.poNo}
+                                    onChange={this.handleFormFieldChange} /></td>
+                            </tr>
+                            <tr>
+                                <td><label htmlFor="shippedDate">Shipped Date</label></td>
+                                <td><input id="shippedDate" name="shippedDate" type="text"
+                                    placeholder="DD/MM/YYYY" className="form-control"
+                                    required value={selectedInvoice.shippedDate}
+                                    onChange={this.handleFormFieldChange} /></td>
+
+                                <td><label htmlFor="shipment">Shipment</label></td>
+                                <td><input id="shipment" name="shipment" type="text" className="form-control"
+                                    required value={selectedInvoice.shipment}
+                                    onChange={this.handleFormFieldChange} /></td>
+                            </tr>
+                            <tr>
+                                <td><label htmlFor="terms">Terms</label></td>
+                                <td><input id="terms" name="terms" type="text" className="form-control"
+                                    required value={selectedInvoice.terms}
+                                    onChange={this.handleFormFieldChange} /></td>
+
+                                <td><label htmlFor="reference">Reference</label></td>
+                                <td><input id="reference" name="reference" type="text" className="form-control"
+                                    required value={selectedInvoice.reference}
+                                    onChange={this.handleFormFieldChange} /></td>{/* ./form-invoice-table-company */}
                             </tr>
                             </tbody>
                         </table>{/* ./form-invoice-table-otherdetails */}
+                        <hr/>
 
                         <table id="form-invoice-table-lineitems" className="table table-striped">
                         <thead className="bg-secondary-light text-secondary">
@@ -183,7 +208,8 @@ class App extends Component {
                             <tr>
                                 <td rowSpan="5">
                                     <label htmlFor="remarks">Remarks</label>
-                                    <textarea id="remarks" name="remarks" rows="4" className="form-control"></textarea>
+                                    <textarea id="remarks" name="remarks" rows="4" className="form-control"
+                                        value={selectedInvoice.remarks} onChange={this.handleFormFieldChange}></textarea>
                                 </td>
                             </tr>    
                             <tr>

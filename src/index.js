@@ -8,7 +8,6 @@ import defaultInvoice from './data/default-invoice';
 ReactDom.render(
     <App
         invoices={invoices}
-        defaultInvoice={defaultInvoice}
-        omittedFieldsUpdate={[ 'processingFees', 'taxes', 'total', 'lineItems' ]} />,
+        defaultInvoice={defaultInvoice} />,
     document.getElementById('app')
 );
