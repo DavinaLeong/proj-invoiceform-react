@@ -17,6 +17,8 @@ class App extends Component {
             invoices: this.props.invoices,
             selectedInvoice: this.props.defaultInvoice
         };
+
+        this.handleFormFieldChange = this.handleFormFieldChange.bind(this);
     }
 
     /**
@@ -56,21 +58,24 @@ class App extends Component {
 
     /**
      * Updates the values of the selectedInvoice.
-     * @param {*} value - The value of the field to be updated
      * @param {string} field - The name of the field to update
+     * @param {*} value - The value of the field to be updated
      */
-    updateSelectedInvoice(value, field) {
+    updateSelectedInvoice(field, value) {
         const selectedInvoice = this.state.selectedInvoice;
         selectedInvoice[field] = value;
         this.setState({ selectedInvoice: selectedInvoice});
     }
 
     /**
-     * Handles the onChange event of Company field.
+     * Generic onChange handler.
      * @param {*} event 
      */
-    handleCompanyChange(event) {
-        this.updateSelectedInvoice(event.target.value, 'company');
+    handleFormFieldChange(event) {
+        console.log('form field: ', event.target.name);
+        if (! this.props.omittedFieldsUpdate.includes(event.target.name)) {
+            this.updateSelectedInvoice(event.target.name, event.target.value);
+        }
     }
 
     render() {
@@ -97,14 +102,17 @@ class App extends Component {
                             <tr>
                                 <td><label htmlFor="company">Company</label></td>
                                 <td><input id="company" name="company" type="text" className="form-control" required
-                                    value={selectedInvoice.company} onChange={this.handleCompanyChange.bind(this)} /></td>
+                                    value={selectedInvoice.company} onChange={this.handleFormFieldChange} /></td>
 
                                 <td><label htmlFor="invoiceNo">Invoice No.</label></td>
-                                <td><input id="invoiceNo" name="invoiceNo" type="text" className="form-control" required /></td>
+                                <td><input id="invoiceNo" name="invoiceNo" type="text" className="form-control" required
+                                    value={selectedInvoice.invoiceNo} onChange={this.handleFormFieldChange} /></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="address">Address</label></td>
-                                <td><textarea id="address" name="address" className="form-control" rows="2" required></textarea></td>
+                                <td><textarea id="address" name="address" className="form-control" rows="2" required
+                                    value={selectedInvoice.address}
+                                    onChange={this.handleFormFieldChange}></textarea></td>
 
                                 <td><label htmlFor="date">Date</label></td>
                                 <td><input id="date" name="date" type="date" className="form-control" placeholder="DD/MM/YYYY" required /></td>{/* ./form-invoice-table-company */}
