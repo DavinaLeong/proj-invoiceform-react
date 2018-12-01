@@ -27,10 +27,11 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="ml-auto">
-                <small class="text-secondary"><i class="fas fa-clock"></i> DD MMM YY, HH:ii:ss</small>
-            </div>
-        </form>
+            <div class="navbar-text ml-auto">
+                <i class="fas fa-user"></i> John Doe&nbsp;&nbsp;
+                <i class="fas fa-clock"></i> DD MMM YY, HH:ii:ss
+            </ul>
+        </div>
     </nav>
 
     <div class="container-fluid">
@@ -56,9 +57,57 @@
                     </ol>
                 </nav>
 
-                <h1><i class="fas fa-cog"></i> Settings</h1>
+                <h1 class="mb-3"><i class="fas fa-cog"></i> Settings</h1>
 
-                <!-- content here -->
+                <form id="form-settings">
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name"
+                                placeholder="Name" value="John Doe">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-6">
+                            <button class="btn btn-outline-primary" type="button" data-toggle="modal"
+                                data-target="#changePasswordModal"><i class="fas fa-key"></i> Change</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-3">
+                        <label for="maxEntries" class="col-sm-2 col-form-label">Max Entries per Week</label>
+                        <div class="col-sm-6">
+                            <input type="number" step="1" min="0" class="form-control"
+                                id="maxEntries" placeholder="0" value="5">
+                        </div>
+                    </div>
+                    <br>
+
+                    <h6>Default Values</h6>
+                    <div class="form-group row">
+                        <label for="company" class="col-sm-2 col-form-label">Company</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="company"
+                                placeholder="company" value="Company">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="year" class="col-sm-2 col-form-label">Year</label>
+                        <div class="col-sm-6">
+                            <input type="number" step="1" min="0" class="form-control"
+                                id="year" placeholder="YYYY" value="2018">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-8 text-right">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Submit</button>
+                        </div>
+                    </div>
+                </form><!-- ./form-settings -->
 
                 <footer class="mt-2 pb-3">
                     <hr>
@@ -68,6 +117,47 @@
 
         </div><!-- ./row -->
     </div><!-- ./container -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <form id="form-change-password" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="currentPassword" class="col-sm-3 col-form-label">Current Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="currentPassword">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="form-group row">
+                        <label for="newPassword" class="col-sm-3 col-form-label">New Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="confirmNewPassword" class="col-sm-3 col-form-label">Confirm New Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="confirmNewPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
+                    <button type="button" class="btn btn-primary"><i class="fas fa-check"></i> Submit</button>
+                </div>
+            </form><!-- ./form-change-password -->
+        </div>
+    </div><!-- ./changePasswordModal -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
