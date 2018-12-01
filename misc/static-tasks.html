@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-light navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-light navbar-expand-lg navbar-light border-0 bg-light">
         <a class="navbar-brand" href="./static-tasks.html">Work Log</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div id="sidebar" class="col-3 bg-light">
+            <div id="sidebar" class="col-3 border-0 bg-light">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#"><i class="fas fa-file-alt fa-fw"></i> Tasks</a>
@@ -54,145 +54,256 @@
                     </ol>
                 </nav>
 
-                <form id="form-invoice">
-                    <table id="form-invoice-table-company" class="table table-borderless">
-                        <tr>
-                            <td><label for="company">Company</label></td>
-                            <td><input id="company" name="company" type="text" class="form-control" required></td>
+                <h1>Tasks</h1>
 
-                            <td><label for="invoiceNo">Invoice No.</label></td>
-                            <td><input id="invoiceNo" name="invoiceNo" type="text" class="form-control" required></td>
-                        </tr>
-                        <tr>
-                            <td><label for="address">Address</label></td>
-                            <td><textarea id="address" name="address" class="form-control" rows="2" required></textarea></td>
+                <div class="row">
 
-                            <td><label for="date">Date</label></td>
-                            <td><input id="date" name="date" type="date" class="form-control" placeholder="DD-MM-YYYY" required></td>
-                        </tr>
-                    </table><!-- ./form-invoice-table-company -->
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-success text-light">
+                            <div class="card-body">
+                                <h5 class="card-title">New Week <i class="fas fa-plus fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> ???</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> ???</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <table id="form-invoice-table-maindetails" class="table table-borderless">
-                        <thead class="bg-secondary-light text-secondary">
-                        <tr>
-                            <th><label for="soldTo">Sold To</label></th>
-                            <th><label for="shipTo">Ship To</label></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <textarea id="soldTo" name="soldTo" class="form-control"
-                                    rows="3" require></textarea>
-                            </td>
-                            <td>
-                                <textarea id="shipTo" name="shipTo" class="form-control"
-                                    rows="3" require></textarea>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table><!-- ./form-invoice-table-maindetails -->
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <table id="form-invoice-table-otherdetails" class="table table-borderless">
-                        <thead class="bg-secondary-light text-secondary">
-                        <tr>
-                            <th><label for="salesPerson">Sales Person</label></th>
-                            <th><label for="poNo">P.O. No.</label></th>
-                            <th><label for="shippedDate">Shipped Date</label></th>
-                            <th><label for="shipment">Shipment</label></th>
-                            <th><label for="terms">Terms</label></th>
-                            <th><label for="reference">Reference</label></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><input id="salesPerson" name="salesPerson" class="form-control" required></td>
-                            <td><input id="poNo" name="poNo" class="form-control" required></td>
-                            <td><input id="shippedDate" name="shippedDate" class="form-control" required></td>
-                            <td><input id="shipment" name="shipment" class="form-control" required></td>
-                            <td><input id="terms" name="terms" class="form-control" required></td>
-                            <td><input id="reference" name="reference" class="form-control" required></td>
-                        </tr>
-                        </tbody>
-                    </table><!-- ./form-invoice-table-otherdetails -->
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <table id="form-invoice-table-lineitems" class="table table-striped">
-                        <thead class="bg-secondary-light text-secondary">
-                        <tr>
-                            <th>Item</th>
-                            <th>Qty</th>
-                            <th>Unit Price</th>
-                            <th>Amount</th>
-                            <th>&nbsp;</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr id="tr-ili-0">
-                            <td><input id="item0" name="item0" type="text" class="form-control" required></td>
-                            <td><input id="qty0" name="qty0" type="number" step="1" min="1" max="1000" class="form-control" required></td>
-                            <td><input id="unitPrice0" name="unitPrice0" class="form-control" step="0.01" required></td>
-                            <td><p id="amount0" class="form-control-plaintext">0.00</p></td>
-                            <td><button id="remove0" name="remove0" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
-                        </tr>
-                        <tr id="tr-ili-1">
-                            <td><input id="item1" name="item1" type="text" class="form-control" required></td>
-                            <td><input id="qty1" name="qty1" type="number" step="1" min="1" max="1000" class="form-control" required></td>
-                            <td><input id="unitPrice1" name="unitPrice1" class="form-control" step="0.01" required></td>
-                            <td><p id="amount1" class="form-control-plaintext">0.00</p></td>
-                            <td><button id="remove1" name="remove1" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
-                        </tr>
-                        <tr id="tr-ili-2">
-                            <td><input id="item2" name="item2" type="text" class="form-control" required></td>
-                            <td><input id="qty2" name="qty2" type="number" step="1" min="1" max="1000" class="form-control" required></td>
-                            <td><input id="unitPrice2" name="unitPrice2" class="form-control" step="0.01" required></td>
-                            <td><p id="amount2" class="form-control-plaintext">0.00</p></td>
-                            <td><button id="remove2" name="remove2" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
-                        </tr>
-                        <tr id="tr-ili-3">
-                            <td><input id="item3" name="item3" type="text" class="form-control" required></td>
-                            <td><input id="qty3" name="qty3" type="number" step="1" min="1" max="1000" class="form-control" required></td>
-                            <td><input id="unitPrice3" name="unitPrice3" class="form-control" step="0.01" required></td>
-                            <td><p id="amount3" class="form-control-plaintext">0.00</p></td>
-                            <td><button id="remove3" name="remove3" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
-                        </tr>
-                        <tr id="tr-ili-4">
-                            <td><input id="item4" name="item4" type="text" class="form-control" required></td>
-                            <td><input id="qty4" name="qty4" type="number" step="1" min="1" max="1000" class="form-control" required></td>
-                            <td><input id="unitPrice4" name="unitPrice4" class="form-control" step="0.01" required></td>
-                            <td><p id="amount4" class="form-control-plaintext">0.00</p></td>
-                            <td><button id="remove4" name="remove4" class="btn btn-link"><i class="fas fa-times text-danger"></i></button></td>
-                        </tr>
-                        </tbody>
-                    </table><!-- ./form-invoice-table-lineitems -->
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <table id="form-invoice-table-total" class="table table-borderless">
-                        <tr>
-                            <td rowspan="5">
-                                <label for="remarks">Remarks</label>
-                                <textarea id="remarks" name="remarks" rows="4" class="form-control"></textarea>
-                            </td>
-                        </tr>    
-                        <tr>
-                            <td class="bg-secondary-light text-secondary">Subtotal</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-secondary-light text-secondary">Processing Fees</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-secondary-light text-secondary">Taxes</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-secondary-light text-secondary">Total</td>
-                            <td>0.00</td>
-                        </tr>
-                    </table><!-- ./form-invoice-table-total -->
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                </form>
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <footer class="mt-2 pb-3 small text-secondary text-right font-italic">React Invoice Form, Davina Leong 2018</footer>
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                <div>
+                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- ./row -->
+
+                <footer class="mt-2 pb-3">
+                    <hr>
+                    <p class="small text-secondary text-right font-italic">React Invoice Form, Davina Leong 2018</p>
+                </footer>
             </div>
 
         </div><!-- ./row -->
