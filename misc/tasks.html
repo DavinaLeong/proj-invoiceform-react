@@ -28,14 +28,14 @@
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="ml-auto">
-                <small class="text-secondary">DD MMM YY, HH:ii:ss</small>
+                <small class="text-secondary"><i class="fas fa-clock"></i> DD MMM YY, HH:ii:ss</small>
             </div>
         </form>
     </nav>
 
     <div class="container-fluid">
         <div class="row">
-            <div id="sidebar" class="col-3 border-0 bg-light">
+            <div id="sidebar" class="col-2 border-0 bg-light">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#"><i class="fas fa-file-alt fa-fw"></i> Tasks</a>
@@ -47,9 +47,9 @@
                         <a class="nav-link" href="./login.html"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
                     </li>
                 </ul>
-            </div>
+            </div><!-- ./sidebar -->
 
-            <div id="invoice" class="col-9">
+            <div id="main" class="col-10">
                 <nav class="mt-1" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Tasks</li>
@@ -59,254 +59,413 @@
                 <h1>Tasks</h1>
 
                 <div class="row">
+                    <div class="col-10">
 
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-success text-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">New Week <i class="fas fa-plus fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> ???</span>
-                                    <span class="badge badge-secondary">???</span>
+                        <div class="row">
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-success text-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">New Week <i class="fas fa-plus fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> ???</span>
+                                            <span class="badge badge-secondary">???</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-question"></i>
+                                            <i class="fas fa-question"></i>
+                                            <i class="fas fa-question"></i>
+                                            <i class="fas fa-question"></i>
+                                            <i class="fas fa-question"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-sun"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-building"></i>
+                                            <i class="fas fa-building"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-stethoscope"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-calendar"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-calendar"></i>
+                                            <i class="fas fa-calendar"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-stethoscope"></i>
+                                            <i class="fas fa-stethoscope"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <div class="card border-0 bg-light clickable">
-                            <div class="card-body">
-                                <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
-                                <div>
-                                    <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
-                                    <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+        
+                            <div class="col-3 mb-3">
+                                <div class="card border-0 bg-light clickable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Week ## <i class="fas fa-pencil-alt fa-pull-right"></i></h5>
+                                        <div class="mb-2">
+                                            <span class="badge badge-info"><i class="fas fa-building"></i> Company</span>
+                                            <span class="badge badge-secondary"><i class="fas fa-calendar"></i> YYYY</span>
+                                        </div>
+                                        <div class="small">
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                            <i class="fas fa-laptop"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div><!-- ./row -->
 
+                    </div><!-- ./col-10 -->
+
+                    <div class="col-2">
+                        <div class="card text-light bg-secondary border-0">
+                            <div class="card-body">
+                                <h5 class="card-title">Key</h5>
+
+                                <div class="small"><i class="fas fa-laptop fa-fw"></i> Work Day</div>
+                                <div class="small"><i class="fas fa-calendar fa-fw"></i> Public Holiday</div>
+                                <div class="small"><i class="fas fa-building fa-fw"></i> Company Events</div>
+                                <div class="small"><i class="fas fa-sun fa-fw"></i> Annual Leave</div>
+                                <div class="small"><i class="fas fa-stethoscope fa-fw"></i> Medical Leave</div>
+                                <div class="small"><i class="fas fa-question fa-fw"></i> Undefined</div>
+                            </div>
+                        </div>
+                    </div><!-- ./col-2 -->
                 </div><!-- ./row -->
 
                 <footer class="mt-2 pb-3">
                     <hr>
                     <p class="small text-secondary text-right font-italic">React Invoice Form, Davina Leong 2018</p>
                 </footer>
-            </div>
+            </div><!-- ./main -->
 
         </div><!-- ./row -->
     </div><!-- ./container -->
