@@ -60,13 +60,303 @@
                 <nav class="mt-1" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item" aria-current="page"><a href="./tasks.html">Tasks</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Week ##</li>
+                        <li class="breadcrumb-item active" aria-current="page">Existing Week</li>
                     </ol>
                 </nav>
 
-                <h1 class="border-bottom pb-1 mb-3"><i class="fas fa-pencil-alt"></i> Week ##</h1>
+                <h1 class="border-bottom pb-1 mb-3"><i class="fas fa-pencil-alt"></i> Existing Week</h1>
 
-                <!-- content here -->
+                <div class="row">
+                    <div class="col-10">
+
+                        <form id="form-existing-week">
+                            <div class="form-group row">
+                                <label for="title" class="col-sm-2 col-form-label">Title <span class="text-danger">*</span></label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-lg" id="title" placeholder="Week ##"
+                                        maxlength="50" value="Week ##" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="company" class="col-sm-2 col-form-label">Company <span class="text-danger">*</span></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-building"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="company" placeholder="Company" value="Company"
+                                            maxlength="50" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="Year" class="col-sm-2 col-form-label">Year <span class="text-danger">*</span></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar"></i></span>
+                                        </div>
+                                        <input type="number" class="form-control" id="Year" placeholder="Year" value="2018"
+                                            min="0" step="1" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            
+                            <div id="entry0" class="card border-0 bg-secondary-light mb-2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Entry</h5>
+
+                                    <div class="form-group row">
+                                        <label for="date0" class="col-sm-2 col-form-label">Date <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-lg" id="date0" placeholder="DD MMM"
+                                                value="30 Nov" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="type0" class="col-sm-2 col-form-label">Day Type <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-sun"></i></span>
+                                                </div>
+                                                <select type="text" class="form-control" id="type0" required>
+                                                    <option>Undefined</option>
+                                                    <option>Work Day</option>
+                                                    <option>Public Holiday</option>
+                                                    <option>Company Events</option>
+                                                    <option selected>Annual Leave</option>
+                                                    <option>Medical Leave</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="tasks0" class="col-sm-2 col-form-label">Tasks <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <textarea id="tasks0" class="form-control" rows="8" required>Annual Leave (1)</textarea>
+                                        </div>
+                                    </div>
+                                </div><!-- ./card-body -->
+                            </div><!-- ./entry0 -->
+
+                            <div id="entry1" class="card border-0 bg-secondary-light mb-2">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm float-right"><i class="fas fa-times"></i></button>
+                                    <h5 class="card-title">Entry</h5>
+
+                                    <div class="form-group row">
+                                        <label for="date1" class="col-sm-2 col-form-label">Date <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-lg" id="date1" placeholder="DD MMM"
+                                                value="31 Nov" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="type1" class="col-sm-2 col-form-label">Day Type <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-laptop"></i></span>
+                                                </div>
+                                                <select type="text" class="form-control" id="type1" required>
+                                                    <option>Undefined</option>
+                                                    <option selected>Work Day</option>
+                                                    <option>Public Holiday</option>
+                                                    <option>Company Events</option>
+                                                    <option>Annual Leave</option>
+                                                    <option>Medical Leave</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="tasks1" class="col-sm-2 col-form-label">Tasks <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <textarea id="tasks1" class="form-control" rows="8" required>- Task item
+- Task item
+- Task item
+- Task item
+- Task item</textarea>
+                                        </div>
+                                    </div>
+                                </div><!-- ./card-body -->
+                            </div><!-- ./entry1 -->
+
+                            <div id="entry2" class="card border-0 bg-secondary-light mb-2">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm float-right"><i class="fas fa-times"></i></button>
+                                    <h5 class="card-title">Entry</h5>
+
+                                    <div class="form-group row">
+                                        <label for="date2" class="col-sm-2 col-form-label">Date <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-lg" id="date2" placeholder="DD MMM"
+                                                value="29 Nov" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="type2" class="col-sm-2 col-form-label">Day Type <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-laptop"></i></span>
+                                                </div>
+                                                <select type="text" class="form-control" id="type2" required>
+                                                    <option>Undefined</option>
+                                                    <option selected>Work Day</option>
+                                                    <option>Public Holiday</option>
+                                                    <option>Company Events</option>
+                                                    <option>Annual Leave</option>
+                                                    <option>Medical Leave</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="tasks2" class="col-sm-2 col-form-label">Tasks <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <textarea id="tasks2" class="form-control" rows="8" required>- Task item
+- Task item
+- Task item
+- Task item
+- Task item</textarea>
+                                        </div>
+                                    </div>
+                                </div><!-- ./card-body -->
+                            </div><!-- ./entry2 -->
+
+                            <div id="entry3" class="card border-0 bg-secondary-light mb-2">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm float-right"><i class="fas fa-times"></i></button>
+                                    <h5 class="card-title">Entry</h5>
+
+                                    <div class="form-group row">
+                                        <label for="date3" class="col-sm-2 col-form-label">Date <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-lg" id="date3" placeholder="DD MMM"
+                                                value="28 Nov" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="type3" class="col-sm-2 col-form-label">Day Type <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-laptop"></i></span>
+                                                </div>
+                                                <select type="text" class="form-control" id="type3" required>
+                                                    <option>Undefined</option>
+                                                    <option selected>Work Day</option>
+                                                    <option>Public Holiday</option>
+                                                    <option>Company Events</option>
+                                                    <option>Annual Leave</option>
+                                                    <option>Medical Leave</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="tasks3" class="col-sm-2 col-form-label">Tasks <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <textarea id="tasks3" class="form-control" rows="8" required>- Task item
+- Task item
+- Task item
+- Task item
+- Task item</textarea>
+                                        </div>
+                                    </div>
+                                </div><!-- ./card-body -->
+                            </div><!-- ./entry3 -->
+
+                            <div id="entry4" class="card border-0 bg-secondary-light mb-2">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm float-right"><i class="fas fa-times"></i></button>
+                                    <h5 class="card-title">Entry</h5>
+
+                                    <div class="form-group row">
+                                        <label for="date4" class="col-sm-2 col-form-label">Date <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-lg" id="date4" placeholder="DD MMM"
+                                                value="28 Nov" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="type4" class="col-sm-2 col-form-label">Day Type <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-laptop"></i></span>
+                                                </div>
+                                                <select type="text" class="form-control" id="type4" required>
+                                                    <option>Undefined</option>
+                                                    <option selected>Work Day</option>
+                                                    <option>Public Holiday</option>
+                                                    <option>Company Events</option>
+                                                    <option>Annual Leave</option>
+                                                    <option>Medical Leave</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="tasks4" class="col-sm-2 col-form-label">Tasks <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <textarea id="tasks4" class="form-control" rows="8" required>- Task item
+- Task item
+- Task item
+- Task item
+- Task item</textarea>
+                                        </div>
+                                    </div>
+                                </div><!-- ./card-body -->
+                            </div><!-- ./entry4 -->
+
+                            <div class="form-group row">
+                                <div class="col-sm-12 text-right">
+                                    <button type="button" class="btn btn-outline-primary btn-sm" disabled><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <div class="col-sm-12 text-right">
+                                    <a href="./tasks.html" class="btn btn-outline-secondary"><i class="fas fa-ban"></i> Cancel</a>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div><!-- ./col-10 -->
+
+                    <div class="col-2">
+                        <div class="card text-light bg-secondary border-0">
+                            <div class="card-body">
+                                <h5 class="card-title">Key</h5>
+
+                                <div class="small"><i class="fas fa-laptop fa-fw"></i> Work Day</div>
+                                <div class="small"><i class="fas fa-calendar fa-fw"></i> Public Holiday</div>
+                                <div class="small"><i class="fas fa-building fa-fw"></i> Company Events</div>
+                                <div class="small"><i class="fas fa-sun fa-fw"></i> Annual Leave</div>
+                                <div class="small"><i class="fas fa-stethoscope fa-fw"></i> Medical Leave</div>
+                                <div class="small"><i class="fas fa-question fa-fw"></i> Undefined</div>
+                            </div>
+                        </div>
+                    </div><!-- ./col-2 -->
+                </div><!-- ./row -->
 
                 <footer class="border-top mt-2 pt-1 pb-3">
                     <p class="small text-secondary text-right font-italic">React Invoice Form, Davina Leong 2018</p>
@@ -79,17 +369,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function() {
-            $(".card.border-0.bg-success").click(function() {
-                location.href = "./new-week.html";
-            });
-
-            $(".card.border-0.bg-light").click(function() {
-                location.href = "./existing-task.html";
-            });
-        });
-    </script>
 </body>
 </html>
