@@ -1,0 +1,21 @@
+export default {
+    id: null,
+    invoiceNo: "",
+    company: "",
+    address: "",
+    date: "",
+    soldTo: "",
+    shipTo: "",
+    salesPerson: "",
+    poNo: "",
+    shippedDate: "",
+    shipment: "",
+    terms: "",
+    remarks: "",
+    reference: "",
+    subtotal: "0.00",
+    processingFees: "0.00",
+    taxes: "0.00",
+    total: "0.00",
+    lineItems: []
+};

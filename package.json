@@ -1,7 +1,7 @@
 {
-  "name": "proj-react-form",
+  "name": "proj-worklog-react",
   "version": "0.0.1",
-  "description": "proj-react-form",
+  "description": "proj-worklog-react",
   "main": "server.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
@@ -12,6 +12,8 @@
   "author": "Davina Leong <davina.leong@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "moment": "~2.22.2",
+    "numeral": "~2.0.6",
     "popper.js": "~1.14.4",
     "react": "~16.5.2",
     "react-dom": "~16.5.2"
