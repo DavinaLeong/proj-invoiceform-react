@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Breadcrumb from './components/breadcrumb/Breadcrumb.jsx';
-import Legend from './components/legend/Legend.jsx';
+import Breadcrumb from './components/breadcrumb/breadcrumb.component.jsx';
+import Legend from './components/legend/legend.component.jsx';
 
 /**
  * The parent component which holds and monitors all necessary
