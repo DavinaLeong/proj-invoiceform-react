@@ -13,11 +13,11 @@ class TasksPage extends Component {
                             <span className="badge badge-secondary">???</span>
                         </div>
                         <div className="small">
-                            <i className="fas fa-question"></i>
-                            <i className="fas fa-question"></i>
-                            <i className="fas fa-question"></i>
-                            <i className="fas fa-question"></i>
-                            <i className="fas fa-question"></i>
+                            <i className="fas fa-question mr-1"></i>
+                            <i className="fas fa-question mr-1"></i>
+                            <i className="fas fa-question mr-1"></i>
+                            <i className="fas fa-question mr-1"></i>
+                            <i className="fas fa-question mr-1"></i>
                         </div>
                     </div>
                 </div>

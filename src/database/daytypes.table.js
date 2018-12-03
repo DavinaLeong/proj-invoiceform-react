@@ -1,32 +1,32 @@
 export default {
     WORK_DAY: {
-        label: "fas fa-laptop fa-fw",
-        icon: "Work Day",
+        label: "Work Day",
+        icon: "fas fa-laptop mr-1",
         value: "WORK_DAY"
     },
     PUBLIC_HOLIDAY: {
-        label: "fas fa-calendar fa-fw",
-        icon: "Public Holiday",
+        label: "Public Holiday",
+        icon: "fas fa-calendar mr-1",
         value: "PUBLIC_HOLIDAY"
     },
     COMPANY_EVENT: {
-        label: "fas fa-building fa-fw",
-        icon: "Company Events",
+        label: "Company Events",
+        icon: "fas fa-building mr-1",
         value: "COMPANY_EVENT"
     },
     ANNUAL_LEAVE: {
-        label: "fas fa-sun fa-fw",
-        icon: "Annual Leave",
+        label: "Annual Leave",
+        icon: "fas fa-sun mr-1",
         value: "ANNUAL_LEAVE"
     },
     MEDICAL_LEAVE: {
-        label: "fas fa-stethoscope fa-fw",
-        icon: "Medical Leave",
+        label: "Medical Leave",
+        icon: "fas fa-stethoscope mr-1",
         value: "MEDICAL_LEAVE"
     },
     UNDEFINED: {
-        label: "fas fa-question fa-fw",
-        icon: "Undefined",
+        label: "Undefined",
+        icon: "fas fa-question mr-1",
         value: ""
     }
 };
