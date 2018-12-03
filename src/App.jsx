@@ -4,6 +4,10 @@ import BreadcrumbComponent from './components/breadcrumb/breadcrumb.component.js
 import TitleComponent from './components/title/title.component.jsx';
 import LegendComponent from './components/legend/legend.component.jsx';
 
+import TasksPage from './pages/tasks.page.jsx';
+import NewWeekPage from './pages/new-week.page.jsx';
+import EditWeekPage from './pages/edit-week.page.jsx';
+
 /**
  * The parent component which holds and monitors all necessary
  * props and states that the children components need.
@@ -35,6 +39,20 @@ class App extends Component {
         }
     }
 
+    currentPage() {
+        switch(this.state.page.current) {
+            case this.props.pageStates.TASKS:
+                return <TasksPage />;
+
+            case this.props.pageStates.CREATE_TASK:
+                return <NewWeekPage />;
+
+            case this.props.pageStates.EDIT_TASK:
+                return <EditWeekPage />;
+
+        }
+    }
+
     render() {
         return (
             <div id="main">
@@ -46,7 +64,7 @@ class App extends Component {
                 <TitleComponent page={this.state.page.current} />
                 <LegendComponent />
 
-
+                {this.currentPage()}
             </div>
         );
     }

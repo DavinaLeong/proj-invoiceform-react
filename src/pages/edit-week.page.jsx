@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class TasksPage extends Component {
+class EditWeekPage extends Component {
 
     render() {
         return (
             <div>
-                <h3>Tasks</h3>
+                <h3>Edit Week</h3>
             </div>
         );
     }
 
-} // end Tasks component
+} // end EditWeekPage
 
-export default TasksPage;
+export default EditWeekPage;
