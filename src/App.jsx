@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Breadcrumb from './components/breadcrumb/breadcrumb.component.jsx';
+import Title from './components/title/title.component.jsx';
 import Legend from './components/legend/legend.component.jsx';
 
 /**
@@ -14,8 +15,8 @@ class App extends Component {
 
         this.state = {
             page: {
-                previous: this.props.pageStates.CREATE_TASK,
-                current: this.props.pageStates.CREATE_TASK
+                previous: this.props.pageStates.TASKS,
+                current: this.props.pageStates.TASKS
             }
         };
 
@@ -42,8 +43,7 @@ class App extends Component {
                     currentPage={this.state.page.current}
                     changePage={this.changePage} />
 
-                <h2 className="border-bottom pb-1 mb-3">
-                    <i className="fas fa-file-alt"></i> Tasks</h2>
+                <Title page={this.state.page.current} />
 
                 <Legend />
             </div>
