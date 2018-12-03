@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import data from './title';
 
-class Title extends Component {
+class TitleComponent extends Component {
     
     render() {
         const page = data[this.props.page];
@@ -13,6 +13,6 @@ class Title extends Component {
         );
     }
 
-} // end Title component
+} // end Title
 
-export default Title;
+export default TitleComponent;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Breadcrumb from './components/breadcrumb/breadcrumb.component.jsx';
-import Title from './components/title/title.component.jsx';
-import Legend from './components/legend/legend.component.jsx';
+import BreadcrumbComponent from './components/breadcrumb/breadcrumb.component.jsx';
+import TitleComponent from './components/title/title.component.jsx';
+import LegendComponent from './components/legend/legend.component.jsx';
 
 /**
  * The parent component which holds and monitors all necessary
@@ -38,14 +38,15 @@ class App extends Component {
     render() {
         return (
             <div id="main">
-                <Breadcrumb
+                <BreadcrumbComponent
                     pageStates={this.props.pageStates}
                     currentPage={this.state.page.current}
                     changePage={this.changePage} />
 
-                <Title page={this.state.page.current} />
+                <TitleComponent page={this.state.page.current} />
+                <LegendComponent />
 
-                <Legend />
+
             </div>
         );
     }

@@ -7,7 +7,7 @@ import data from './breadcrumb';
  * the breadcrumbs of each page based on the
  * App's current pageState.
  */
-class Breadcrumb extends Component {
+class BreadcrumbComponent extends Component {
 
     breadcrumbItems() {
         return data[this.props.currentPage].map((element, index) => {
@@ -35,6 +35,6 @@ class Breadcrumb extends Component {
         );
     }
 
-} // end Breadcrumb component
+} // end BreadcrumbComponent
 
-export default Breadcrumb;
+export default BreadcrumbComponent;

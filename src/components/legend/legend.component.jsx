@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import data from './legend';
+import data from './l // end LegendComponentegend';
 
-class Legend extends Component {
+class LegendComponent extends Component {
 
     legendItems() {
         return data.map((element, index) => {
@@ -32,6 +32,6 @@ class Legend extends Component {
         );
     }
 
-}
+} // end LegendComponent
 
-export default Legend;
+export default LegendComponent;
