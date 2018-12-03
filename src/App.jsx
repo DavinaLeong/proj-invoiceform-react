@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Breadcrumb from './components/breadcrumb/Breadcrumb.jsx';
+import Legend from './components/legend/Legend.jsx';
 
 /**
  * The parent component which holds and monitors all necessary
@@ -43,10 +44,12 @@ class App extends Component {
 
                 <h2 className="border-bottom pb-1 mb-3">
                     <i className="fas fa-file-alt"></i> Tasks</h2>
+
+                <Legend />
             </div>
         );
     }
 
-}; // end App component
+} // end App component
 
 export default App;

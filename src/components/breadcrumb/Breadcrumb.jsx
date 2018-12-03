@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 import data from './breadcrumb';
 
+/**
+ * This component is responsible for rendering
+ * the breadcrumbs of each page based on the
+ * App's current pageState.
+ */
 class Breadcrumb extends Component {
 
     breadcrumbItems() {
@@ -30,6 +35,6 @@ class Breadcrumb extends Component {
         );
     }
 
-}; // end Breadcrumb component
+} // end Breadcrumb component
 
 export default Breadcrumb;
