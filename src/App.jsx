@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import states from './constants/states';
+
+import Breadcrumb from './components/breadcrumb/Breadcrumb.jsx';
 
 /**
  * The parent component which holds and monitors all necessary
@@ -7,14 +8,38 @@ import states from './constants/states';
  */
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            page: {
+                previous: this.props.pageStates.CREATE_TASK,
+                current: this.props.pageStates.CREATE_TASK
+            }
+        };
+
+        this.changePage = this.changePage.bind(this);
+    }
+
+    changePage(page) {
+        if (this.props.pageStates.array.includes(page)) {
+            const oldCurrent = this.state.page.current;
+            this.setState({
+                page: {
+                    previous: oldCurrent,
+                    current: page
+                }
+            });
+        }
+    }
+
     render() {
         return (
             <div id="main">
-                <nav className="mt-1" aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item active" aria-current="page">Tasks</li>
-                    </ol>
-                </nav>
+                <Breadcrumb
+                    pageStates={this.props.pageStates}
+                    currentPage={this.state.page.current}
+                    changePage={this.changePage} />
 
                 <h2 className="border-bottom pb-1 mb-3">
                     <i className="fas fa-file-alt"></i> Tasks</h2>
@@ -22,6 +47,6 @@ class App extends Component {
         );
     }
 
-}; // end App
+}; // end App component
 
 export default App;

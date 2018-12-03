@@ -6,11 +6,12 @@ export default {
             href: '#'
         }
     ],
-    CREATED_TASK: [
+    CREATE_TASK: [
         {
             active: false,
             label: 'Tasks',
-            href: 'tasks'
+            href: '#',
+            nextPage: 'TASKS'
         }, {
             active: true,
             label: 'New Task',
@@ -21,7 +22,8 @@ export default {
         {
             active: false,
             label: 'Tasks',
-            href: 'tasks'
+            href: '#',
+            nextPage: 'TASKS'
         }, {
             active: true,
             label: 'Edit Task',
