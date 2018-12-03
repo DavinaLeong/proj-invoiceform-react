@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import data from './l // end LegendComponentegend';
+import data from './legend';
 
 class LegendComponent extends Component {
 
