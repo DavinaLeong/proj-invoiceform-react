@@ -11,6 +11,6 @@ ReactDom.render(
         pageStates={enums.page}
         formStates={enums.form}
         
-        data={data} />,
+        database={data} />,
     document.getElementById('app')
 );

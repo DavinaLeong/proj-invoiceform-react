@@ -42,7 +42,7 @@ class App extends Component {
     currentPage() {
         switch(this.state.page.current) {
             case this.props.pageStates.TASKS:
-                return <TasksPage />;
+                return <TasksPage database={this.props.database} />;
 
             case this.props.pageStates.CREATE_TASK:
                 return <NewWeekPage />;

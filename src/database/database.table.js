@@ -1,7 +1,7 @@
-import pages from './pages.table';
+import tasks from './tasks.table';
 import dayTypes from './daytypes.table';
 
 export default {
-    pages: pages,
+    tasks: tasks,
     dayTypes: dayTypes
 };
