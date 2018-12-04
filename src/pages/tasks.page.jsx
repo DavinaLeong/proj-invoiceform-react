@@ -28,15 +28,17 @@ class TasksPage extends Component {
     existingWeekCards() {
         return this.props.database.tasks.map((task, index) => {
             return (
-                <div className="card border-0 bg-light clickable" key={'w'+index}>
-                    <div className="card-body">
-                        <h5 className="card-title">{task.title} <i className="fas fa-pencil-alt fa-pull-right"></i></h5>
-                        <div className="mb-2">
-                            <span className="badge badge-info mr-1"><i className="fas fa-building"></i> {task.company}</span>
-                            <span className="badge badge-secondary"><i className="fas fa-calendar"></i> {task.year}</span>
-                        </div>
-                        <div className="small">
-                            {this.existingWeekCardDays(task.days, index)}
+                <div className="col-3 mb-3">
+                    <div className="card border-0 bg-light clickable" key={'w'+index}>
+                        <div className="card-body">
+                            <h5 className="card-title">{task.title} <i className="fas fa-pencil-alt fa-pull-right"></i></h5>
+                            <div className="mb-2">
+                                <span className="badge badge-info mr-1"><i className="fas fa-building"></i> {task.company}</span>
+                                <span className="badge badge-secondary"><i className="fas fa-calendar"></i> {task.year}</span>
+                            </div>
+                            <div className="small">
+                                {this.existingWeekCardDays(task.days, index)}
+                            </div>
                         </div>
                     </div>
                 </div>

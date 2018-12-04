@@ -15,7 +15,7 @@ class LegendComponent extends Component {
     
     render() {
         return (
-            <p>
+            <p className="border-bottom pb-1">
                 <span className="badge badge-light text-secondary mr-1">
                     <i className="fas fa-laptop fa-fw"></i> Work Day</span>
                 <span className="badge badge-light text-secondary mr-1">
