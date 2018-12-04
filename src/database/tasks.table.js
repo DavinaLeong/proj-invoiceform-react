@@ -1,5 +1,6 @@
 export default [
     {
+        uuid: "4e6aa56c-ebc3-4a5c-98c1-887dee684e02",
         title: "Week 5", company: "Company Two", year: "2018",
         days: [
             {
@@ -20,6 +21,7 @@ export default [
             }
         ]
     }, {
+        uuid: "4c396a64-0cd7-4a27-81cd-579c3b8a66fb",
         title: "Week 4", company: "Company Two", year: "2018",
         days: [
             {
@@ -40,6 +42,7 @@ export default [
             }
         ]
     }, {
+        uuid: "064eea39-279e-4020-acaf-cc9820eaba75",
         title: "Week 3", company: "Company Two", year: "2018",
         days: [
             {
@@ -60,6 +63,7 @@ export default [
             }
         ]
     }, {
+        uuid: "a756fa58-8885-4093-bb0b-985df66243fd",
         title: "Week 2", company: "Company Two", year: "2018",
         days: [
             {
@@ -80,6 +84,7 @@ export default [
             }
         ]
     }, {
+        uuid: "716e290e-d76b-4429-91f3-10ae2e7a66b5",
         title: "Week 1", company: "Company One", year: "2018",
         days: [
             {
