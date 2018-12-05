@@ -1,8 +1,8 @@
 import uuid from 'uuid/v4';
 
-import dayTypeData from './daytypes.data';
+import dayTypeData from './daytype.data';
 
-class DayTypesModel {
+class DayTypeModel {
 
     constructor() {
         this.data = dayTypeData;
@@ -11,25 +11,17 @@ class DayTypesModel {
         ];
     }
 
-    schema(label, icon, value) {
-        return {
-            uuid: uuid(),
-            label: label || "",
-            icon: icon || "",
-            value: icon || ""
-        };
-    }
-
     findAll() {
         return this.data;
     }
 
     findByUuid(uuid) {
-        if (typeof uuid !== 'string') {
+        if (! uuid || typeof uuid !== 'string') {
+            // TODO: Proper error-handling
             return null;
         }
 
-        this.data.find((dayType) => {
+        return this.data.find((dayType) => {
             return dayType.uuid === uuid;
         });
     }
@@ -41,11 +33,11 @@ class DayTypesModel {
             return null;
         }
 
-        this.data.find((dayType) => {
-            return dayType[key] === value;
+        return this.data.find((element) => {
+            return element[key] === value;
         });
     }
 
-} // end DayTypesModel class
+} // end DayTypeModel class
 
-export default DayTypesModel;
+export default DayTypeModel;
