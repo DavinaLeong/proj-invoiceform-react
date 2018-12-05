@@ -28,8 +28,8 @@ class TasksPage extends Component {
     existingWeekCards() {
         return this.props.database.tasks.map((task, index) => {
             return (
-                <div className="col-3 mb-3">
-                    <div className="card border-0 bg-light clickable" key={'w'+index}>
+                <div className="col-3 mb-3" key={'w'+index}>
+                    <div className="card border-0 bg-light clickable">
                         <div className="card-body">
                             <h5 className="card-title">{task.title} <i className="fas fa-pencil-alt fa-pull-right"></i></h5>
                             <div className="mb-2">
