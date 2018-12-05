@@ -8,6 +8,9 @@ import TasksPage from './pages/tasks.page.jsx';
 import NewWeekPage from './pages/new-week.page.jsx';
 import EditWeekPage from './pages/edit-week.page.jsx';
 
+// import WeekModel from './models/weeks/week.model';
+import DayTypeModel from './models/daytype/daytype.model';
+
 /**
  * The parent component which holds and monitors all necessary
  * props and states that the children components need.
@@ -25,6 +28,12 @@ class App extends Component {
         };
 
         this.changePage = this.changePage.bind(this);
+    }
+
+    componentDidMount() {
+        console.log('DEBUGGING CODE');
+
+        console.log(DayTypeModel.findAll());
     }
 
     changePage(page) {
