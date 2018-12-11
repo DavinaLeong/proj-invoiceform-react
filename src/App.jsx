@@ -33,14 +33,9 @@ class App extends Component {
     componentDidMount() {
         console.log('DEBUGGING CODE');
 
-        console.log(WeekModel.update(
-        "4c396a64-0cd7-4a27-81cd-579c3b8a66fb",
-        {
-            title: "Untitled Week",
-            company: "New Company",
-            year: "2019",
-            days: []
-        }));
+        console.log(DaytypeModel.findByUuid(
+            "478be8ba-d3a0-4818-bc6a-f4a818d57c45"
+        ));
     }
 
     changePage(page) {

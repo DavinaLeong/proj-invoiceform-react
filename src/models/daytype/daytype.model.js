@@ -41,9 +41,7 @@ DaytypeModel.findByUuid = function(uuid) {
         return null;
     }
 
-    return data.find((dayType) => {
-        return dayType.uuid === uuid;
-    });
+    return DaytypeModel.findOne(uuid, 'uuid');
 }
 
 /**
@@ -54,20 +52,19 @@ DaytypeModel.findByUuid = function(uuid) {
 DaytypeModel.findOne = function(value, key) {
     if (! value || typeof value === 'undefined' ||
         ! key || typeof key === 'undefined') {
-        console.error('DaytypeModel.findByUuid(): Parameters undefined.');
+        console.error('DaytypeModel.findOne(): Parameters undefined.');
         // TODO: Proper error-handling
         return null;
     }
 
-    if (! DaytypeModel.schema.columns.array.includes(key)) {
+    const schema = DaytypeModel.schema;
+    if (! schema.columns.array.includes(key)) {
         // TODO: Proper error-handling
-        console.error(`Column '${key} doesn't exist in DayTypes table.`);
+        console.error(`Column '${key} doesn't exist in ${schema.tableName} table.`);
         return null;
     }
 
-    return data.find((element) => {
-        return element[key] === value;
-    });
+    return data.find((element) => element[key] === value);
 }
 
 export default DaytypeModel;
