@@ -1,7 +1,13 @@
+import moment from 'moment';
+
+const createdAt = moment().clone().subtract(20, "days").format(formats.dbDate);
+const updatedAt = moment().clone().subtract(10, "days").format(formats.dbDate);
+
 export default [
     {
         uuid: "4e6aa56c-ebc3-4a5c-98c1-887dee684e02",
         title: "Week 5", company: "Company Two", year: "2018",
+        createdAt: createdAt, updatedAt: updatedAt,
         days: [
             {
                 uuid: "e280a332-e849-4933-b80b-cab116b65bc3",
@@ -28,6 +34,7 @@ export default [
     }, {
         uuid: "4c396a64-0cd7-4a27-81cd-579c3b8a66fb",
         title: "Week 4", company: "Company Two", year: "2018",
+        createdAt: createdAt, updatedAt: updatedAt,
         days: [
             {
                 uuid: "f08b4924-70dd-4092-8c5f-efecc371aed7",
@@ -54,6 +61,7 @@ export default [
     }, {
         uuid: "064eea39-279e-4020-acaf-cc9820eaba75",
         title: "Week 3", company: "Company Two", year: "2018",
+        createdAt: createdAt, updatedAt: updatedAt,
         days: [
             {
                 uuid: "386e9ba1-dd84-41eb-9cd8-0d26c679351f",
