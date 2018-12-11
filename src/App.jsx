@@ -8,8 +8,8 @@ import TasksPage from './pages/tasks.page.jsx';
 import NewWeekPage from './pages/new-week.page.jsx';
 import EditWeekPage from './pages/edit-week.page.jsx';
 
-import WeekModel from './models/weeks/week.model';
-import DayTypeModel from './models/daytype/daytype.model';
+import DaytypeModel from './models/daytype/daytype.model';
+import WeekModel from './models/week/week.model';
 
 /**
  * The parent component which holds and monitors all necessary
@@ -33,7 +33,14 @@ class App extends Component {
     componentDidMount() {
         console.log('DEBUGGING CODE');
 
-        console.log(WeekModel.findAll());
+        console.log(WeekModel.update(
+        "4c396a64-0cd7-4a27-81cd-579c3b8a66fb",
+        {
+            title: "Untitled Week",
+            company: "New Company",
+            year: "2019",
+            days: []
+        }));
     }
 
     changePage(page) {

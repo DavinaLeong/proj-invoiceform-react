@@ -1,53 +1,46 @@
 import uuid from 'uuid/v4';
 
-import dayTypeData from './daytype.data';
+import daytypeData from './daytype.data';
 
-const DayTypeModel = {};
+const DaytypeModel = {};
+const data = daytypeData;
 
-DayTypeModel.data = dayTypeData;
-DayTypeModel.schema = {
-    tableName: 'daytype',
+/**
+ * Returns the column information of the DayType table.
+ */
+DaytypeModel.schema = {
+    tableName: 'daytypes',
     columns: {
-        uuid: {
-            name: 'uuid',
-            type: 'string'
-        },
-        label: {
-            name: 'label',
-            type: 'string'
-        },
-        icon: {
-            name: 'icon',
-            type: 'string'
-        },
-        value: {
-            name: 'value',
-            type: 'string'
-        },
+        uuid: { name: 'uuid', type: 'string' },
+        label: { name: 'label', type: 'string' },
+        icon: { name: 'icon', type: 'string' },
+        value: { name: 'value', type: 'string' },
+        createdAt: { name: 'createdAt', type: 'datetime' },
+        updatedAt: { name: 'updatedAt', type: 'datetime' },
         
-        array: ['uuid', 'label',
-            'icon', 'value']
+        array: ['uuid', 'label', 'icon', 'value',
+            'createdAt', 'updateAt']
     }
 };
 
 /**
  * Retrieve all DayTypes
  */
-DayTypeModel.findAll = function() {
-    return DayTypeModel.data;
+DaytypeModel.findAll = function() {
+    return data;
 }
 
 /**
  * Retrieve a DayType by its uuid.
  * @param {string} uuid 
  */
-DayTypeModel.findByUuid = function(uuid) {
+DaytypeModel.findByUuid = function(uuid) {
     if (! uuid || typeof uuid !== 'string') {
         // TODO: Proper error-handling
         return null;
     }
 
-    return DayTypeModel.data.find((dayType) => {
+    return data.find((dayType) => {
         return dayType.uuid === uuid;
     });
 }
@@ -57,16 +50,16 @@ DayTypeModel.findByUuid = function(uuid) {
  * @param {string|number} value 
  * @param {string|number} key 
  */
-DayTypeModel.findOne = function(value, key) {
-    if (! DayTypeModel.schema.columns.array.includes(key)) {
+DaytypeModel.findOne = function(value, key) {
+    if (! DaytypeModel.schema.columns.array.includes(key)) {
         // TODO: Proper error-handling
         console.error(`Column '${key} doesn't exist in DayTypes table.`);
         return null;
     }
 
-    return DayTypeModel.data.find((element) => {
+    return data.find((element) => {
         return element[key] === value;
     });
 }
 
-export default DayTypeModel;
+export default DaytypeModel;
