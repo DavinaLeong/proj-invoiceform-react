@@ -1,7 +1,7 @@
 import uuid from 'uuid/v4';
 import moment from 'moment';
 
-import formats from '../../constants/formats';
+import formats from '../../lib/formats';
 import weekData from './week.data';
 import DaytypeModel from '../daytype/daytype.model';
 

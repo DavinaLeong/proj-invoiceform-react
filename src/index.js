@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 
 import App from './App.jsx';
 
-import enums from './constants/enums';
+import enums from './lib/enums';
 import data from './database/database.table';
 
 ReactDom.render(

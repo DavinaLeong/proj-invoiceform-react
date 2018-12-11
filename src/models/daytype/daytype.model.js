@@ -36,6 +36,7 @@ DaytypeModel.findAll = function() {
  */
 DaytypeModel.findByUuid = function(uuid) {
     if (! uuid || typeof uuid !== 'string') {
+        console.error('DaytypeModel.findByUuid(): Parameters undefined.');
         // TODO: Proper error-handling
         return null;
     }
@@ -51,6 +52,13 @@ DaytypeModel.findByUuid = function(uuid) {
  * @param {string|number} key 
  */
 DaytypeModel.findOne = function(value, key) {
+    if (! value || typeof value === 'undefined' ||
+        ! key || typeof key === 'undefined') {
+        console.error('DaytypeModel.findByUuid(): Parameters undefined.');
+        // TODO: Proper error-handling
+        return null;
+    }
+
     if (! DaytypeModel.schema.columns.array.includes(key)) {
         // TODO: Proper error-handling
         console.error(`Column '${key} doesn't exist in DayTypes table.`);
