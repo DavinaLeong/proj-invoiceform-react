@@ -64,7 +64,7 @@ DaytypeModel.findOne = function(value, key) {
         return null;
     }
 
-    return data.find((element) => element[key] === value);
+    return data.find((daytype) => daytype[key] === value);
 }
 
 export default DaytypeModel;

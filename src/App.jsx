@@ -30,14 +30,6 @@ class App extends Component {
         this.changePage = this.changePage.bind(this);
     }
 
-    componentDidMount() {
-        console.log('DEBUGGING CODE');
-
-        console.log(DaytypeModel.findByUuid(
-            "478be8ba-d3a0-4818-bc6a-f4a818d57c45"
-        ));
-    }
-
     changePage(page) {
         if (this.props.pageStates.array.includes(page)) {
             const oldCurrent = this.state.page.current;
