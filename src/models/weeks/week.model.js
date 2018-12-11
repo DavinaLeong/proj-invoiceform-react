@@ -1,5 +1,7 @@
 import uuid from 'uuid/v4';
+import moment from 'momemnt';
 
+import formats from './../../constants/formats';
 import weekData from './week.data';
 import DayTypeModel from './../daytype/daytype.model';
 
@@ -41,23 +43,6 @@ class WeekModel {
             }
         };
     }
-
-    // week(title, company, year, days) {
-    //     return {
-    //         title: title,
-    //         company: company,
-    //         year: year,
-    //         days: days
-    //     };
-    // }
-
-    // day(date, type, tasks) {
-    //     return {
-    //         date: date,
-    //         type: type,
-    //         tasks: tasks
-    //     }
-    // }
 
     /**
      * Retrieve all Weeks.
@@ -128,7 +113,9 @@ class WeekModel {
             title: week.title,
             company: week.company,
             year: week.year,
-            days: week.days
+            days: week.days,
+            createdAt: moment().format(formats.dbDate),
+            updatedAt: moment().format(formats.dbDate)
         };
 
         this.data.push(createdWeek);
@@ -156,6 +143,8 @@ class WeekModel {
                 this.data[index].company = week.company;
                 this.data[index].year = week.year;
                 this.data[index].days = week.days;
+                this.data[index].createdAt = week.createdAt;
+                this.data[index].updatedAt = moment().format(formats.dbDate);
 
                 updatedWeek = this.data[index];
             }
@@ -178,23 +167,25 @@ class WeekModel {
             return null;
         }
 
-        let weekIndex = this.data.find((week, index) => {
+        const retrievedWeek = this.data.find((week, index) => {
             if (week.uuid === uuid) {
-                return index;
+                retrievedWeek.index = index;
             }
         });
 
-        if (this.data[weekIndex].days.length <= 0) {
+        if (this.data[retrievedWeek].days.length <= 0) {
             return null;
         }
 
-        this.data[weekIndex].days.find((day, index) => {
+        this.data[retrievedWeek].days.find((day, index) => {
             if (day.uuid === dayUuid) {
-                this.data[weekIndex].days[index].date = day.date;
-                this.data[weekIndex].days[index].type = day.type;
-                this.data[weekIndex].days[index].tasks = day.tasks;
+                this.data[retrievedWeek].days[index].date = day.date;
+                this.data[retrievedWeek].days[index].type = day.type;
+                this.data[retrievedWeek].days[index].tasks = day.tasks;
             }
         });
+        this.data[retrievedWeek].createdAt = retrievedWeek.createdAt;
+        this.data[retrievedWeek].updatedAt = moment().format(formats.dbDate);
 
         return this.data;
     }

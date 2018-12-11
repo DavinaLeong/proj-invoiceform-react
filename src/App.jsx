@@ -33,7 +33,7 @@ class App extends Component {
     componentDidMount() {
         console.log('DEBUGGING CODE');
 
-        console.log(DayTypeModel.findAll());
+        console.log(DayTypeModel.findByUuid('52b007b1-0cc4-476c-a546-19a03790f7a8'));
     }
 
     changePage(page) {
