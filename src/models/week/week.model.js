@@ -1,5 +1,5 @@
 import uuid from 'uuid/v4';
-import moment from 'momemnt';
+import moment from 'moment';
 
 import formats from './../../constants/formats';
 import weekData from './week.data';

@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import formats from './../../constants/formats';
+
 const createdAt = moment().clone().subtract(20, "days").format(formats.dbDate);
 const updatedAt = moment().clone().subtract(10, "days").format(formats.dbDate);
 

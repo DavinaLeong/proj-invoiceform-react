@@ -8,7 +8,7 @@ import TasksPage from './pages/tasks.page.jsx';
 import NewWeekPage from './pages/new-week.page.jsx';
 import EditWeekPage from './pages/edit-week.page.jsx';
 
-// import WeekModel from './models/weeks/week.model';
+import WeekModel from './models/weeks/week.model';
 import DayTypeModel from './models/daytype/daytype.model';
 
 /**
@@ -33,7 +33,7 @@ class App extends Component {
     componentDidMount() {
         console.log('DEBUGGING CODE');
 
-        console.log(DayTypeModel.findByUuid('52b007b1-0cc4-476c-a546-19a03790f7a8'));
+        console.log(WeekModel.findAll());
     }
 
     changePage(page) {
