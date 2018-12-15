@@ -11,7 +11,7 @@ export default {
             active: false,
             label: 'Weeks',
             href: '#',
-            nextPage: 'Weeks'
+            nextPage: 'WEEKS'
         }, {
             active: true,
             label: 'New Week',

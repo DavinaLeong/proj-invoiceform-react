@@ -45,13 +45,16 @@ class App extends Component {
     }
 
     changeSelectedWeekHandler(weekUuid) {
-        //
+        //TODO: Change selected week
     }
 
     currentPage() {
         switch(this.state.page.current) {
             case this.props.pageStates.WEEKS:
-                return <WeeksPage weeks={this.state.weeks} />;
+                return <WeeksPage
+                    weeks={this.state.weeks}
+                    pageStates={this.props.pageStates}
+                    changePageHandler={this.changePageHandler} />;
 
             case this.props.pageStates.CREATE_WEEK:
                 return <NewWeekPage />;

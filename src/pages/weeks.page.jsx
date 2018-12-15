@@ -2,10 +2,27 @@ import React, { Component } from 'react';
 
 class WeeksPage extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.gotoNewWeekHandler = this.gotoNewWeekHandler.bind(this);
+        this.gotoEditWeekHandler = this.gotoEditWeekHandler.bind(this);
+    }
+
+    gotoNewWeekHandler() {
+        this.props.changePageHandler(this.props.pageStates.CREATE_WEEK);
+        //TODO: Change selected week
+    }
+
+    gotoEditWeekHandler() {
+        this.props.changePageHandler(this.props.pageStates.EDIT_WEEK);
+        //TODO: Change selected week
+    }
+
     newWeekCard() {
         return (
             <div className="col-3 mb-3">
-                <div className="card border-0 bg-success text-light clickable">
+                <div className="card border-0 bg-success text-light clickable" onClick={this.gotoNewWeekHandler}>
                     <div className="card-body">
                         <h5 className="card-title">New Week <i className="fas fa-plus fa-pull-right"></i></h5>
                         <div className="mb-2">
@@ -29,7 +46,7 @@ class WeeksPage extends Component {
         return this.props.weeks.map((week, index) => {
             return (
                 <div className="col-3 mb-3" key={week.uuid}>
-                    <div className="card border-0 bg-light clickable">
+                    <div className="card border-0 bg-light clickable" onClick={this.gotoEditWeekHandler}>
                         <div className="card-body">
                             <h5 className="card-title">{week.title} <i className="fas fa-pencil-alt fa-pull-right"></i></h5>
                             <div className="mb-2">
