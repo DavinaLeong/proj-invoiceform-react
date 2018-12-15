@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+
 import App from './App.jsx';
 
-import invoices from './data/sample-invoices';
-import defaultInvoice from './data/default-invoice';
+import enums from './lib/enums';
+import data from './database/database.table';
+import WeekModel from './models/week/week.model';
 
 ReactDom.render(
     <App
-        invoices={invoices}
-        defaultInvoice={defaultInvoice} />,
+        pageStates={enums.page}
+        formStates={enums.form}
+        
+        newWeekSchema={WeekModel.newWeekSchema()}
+        weeks={WeekModel.findAllWithDaytypes()} />,
     document.getElementById('app')
 );

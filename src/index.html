@@ -11,26 +11,24 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
     <link rel="icon" href="./images/icon.png" type="image/png">
-    <title>Invoice Form</title>
+    <title>Work Log</title>
 
     <style>
-    .bg-secondary-light {
-        background-color: #eee;
-    }
+    .bg-secondary-light { background-color: #eee; }
+
+    .clickable:hover { cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="container-fluid my-2">
-        <h1 class="display-4">Invoice Form</h1>
-        <hr>
+    <div class="container">
+        <h1 class="display-1 border-bottom pb-1 mb-3">Work Log</h1>
 
         <div id="app">
-            <div class="h2">React app <span class="badge badge-danger text-light">FAILED</span> to load!</div>
+            <div class="display-4"><i className="fas fa-circle-notch fa-spin"></i> Loading react app...</div>
         </div>
 
-        <footer class="mt-5 pb-3 small text-secondary text-right font-italic">
-            <hr>
-            <div>React Invoice Form, Davina Leong 2018</div>
+        <footer class="border-top mt-2 pt-1 pb-3">
+            <p class="small text-secondary text-right font-italic">Work Log, Davina Leong 2018</p>
         </footer>
     </div><!-- ./container -->
 
