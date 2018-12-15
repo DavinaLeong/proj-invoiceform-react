@@ -28,6 +28,20 @@ WeekModel.schema = {
 };
 
 /**
+ * Returns the schema of a new week object.
+ */
+WeekModel.newWeekSchema = function() {
+    return {
+        title: "Untitled",
+        company: "???",
+        year: "???",
+        createdAt: "",
+        updatedAt: "",
+        days: []
+    }
+}
+
+/**
  * Retrieve all Weeks.
  */
 WeekModel.findAll = function() {
