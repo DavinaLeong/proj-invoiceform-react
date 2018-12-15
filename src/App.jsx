@@ -26,10 +26,14 @@ class App extends Component {
                 current: this.props.pageStates.WEEKS
             },
             weeks: this.props.weeks,
-            selectedWeek: null
+            selectedWeek: {
+                previous: null,
+                current: null
+            }
         };
 
         this.changePageHandler = this.changePageHandler.bind(this);
+        this.changeSelectedWeekHandler = this.changeSelectedWeekHandler.bind(this);
     }
 
     changePageHandler(page) {
@@ -45,7 +49,23 @@ class App extends Component {
     }
 
     changeSelectedWeekHandler(weekUuid) {
-        //TODO: Change selected week
+        if (weekUuid) {
+            const selectedWeek = this.state.weeks
+                .find(week => week.uuid === weekUuid);
+            this.setState({
+                selectedWeek: {
+                    previous: selectedWeek,
+                    current: selectedWeek
+                }
+            });
+        }
+
+        this.setState({
+            selectedWeek: {
+                previous: this.props.newWeekSchema,
+                current: this.props.newWeekSchema
+            }
+        });
     }
 
     currentPage() {
@@ -54,13 +74,16 @@ class App extends Component {
                 return <WeeksPage
                     weeks={this.state.weeks}
                     pageStates={this.props.pageStates}
-                    changePageHandler={this.changePageHandler} />;
+                    changePageHandler={this.changePageHandler}
+                    changeSelectedWeekHandler={this.changeSelectedWeekHandler} />;
 
             case this.props.pageStates.CREATE_WEEK:
-                return <NewWeekPage />;
+                return <NewWeekPage
+                    selectedWeek={this.state.selectedWeek} />;
 
             case this.props.pageStates.EDIT_WEEK:
-                return <EditWeekPage />;
+                return <EditWeekPage
+                    selectedWeek={this.state.selectedWeek} />;
 
         }
     }

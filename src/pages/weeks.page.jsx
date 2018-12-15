@@ -11,12 +11,12 @@ class WeeksPage extends Component {
 
     gotoNewWeekHandler() {
         this.props.changePageHandler(this.props.pageStates.CREATE_WEEK);
-        //TODO: Change selected week
+        this.props.changeSelectedWeekHandler();
     }
 
-    gotoEditWeekHandler() {
+    gotoEditWeekHandler(weekUuid) {
         this.props.changePageHandler(this.props.pageStates.EDIT_WEEK);
-        //TODO: Change selected week
+        // this.props.changeSelectedWeekHandler(weekUuid);
     }
 
     newWeekCard() {
