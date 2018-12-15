@@ -1,13 +1,13 @@
 export default {
-    TASKS: {
-        label: "Tasks",
+    WEEKS: {
+        label: "Weeks",
         icon: "fas fa-file-alt"
     },
-    CREATE_TASK:  {
+    CREATE_WEEK:  {
         label: "New Week",
         icon: "fas fa-plus"
     },
-    EDIT_TASK:  {
+    EDIT_WEEK:  {
         label: "Existing Week",
         icon: "fas fa-pencil-alt"
     },

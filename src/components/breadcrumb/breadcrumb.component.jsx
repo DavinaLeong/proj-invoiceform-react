@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import data from './breadcrumb';
+import data from './breadcrumb.data';
 
 /**
  * This component is responsible for rendering

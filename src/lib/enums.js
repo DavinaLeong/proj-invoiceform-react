@@ -1,14 +1,14 @@
 export default {
     page: {
-        TASKS: "TASKS",
-        CREATE_TASK: "CREATE_TASK",
-        EDIT_TASK: "EDIT_TASK",
+        WEEKS: "WEEKS",
+        CREATE_WEEK: "CREATE_WEEK",
+        EDIT_WEEK: "EDIT_WEEK",
 
-        array: ["TASKS", "CREATE_TASK", "EDIT_TASK"]
+        array: ["WEEKS", "CREATE_WEEK", "EDIT_WEEK"]
     },
     form: {
         ENTRY: "ENTRY",
-        SUMBIT: "SUBMIT",
+        SUBMIT: "SUBMIT",
         ERROR: "ERROR",
         SUCCESS: "SUCCESS",
 

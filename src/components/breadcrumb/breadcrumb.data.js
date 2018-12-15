@@ -1,32 +1,32 @@
 export default {
-    TASKS: [
+    WEEKS: [
         {
             active: true,
-            label: 'Tasks',
+            label: 'Weeks',
             href: '#'
         }
     ],
-    CREATE_TASK: [
+    CREATE_WEEK: [
         {
             active: false,
-            label: 'Tasks',
+            label: 'Weeks',
             href: '#',
-            nextPage: 'TASKS'
+            nextPage: 'Weeks'
         }, {
             active: true,
-            label: 'New Task',
+            label: 'New Week',
             href: '#'
         }
     ],
-    EDIT_TASK: [
+    EDIT_WEEK: [
         {
             active: false,
-            label: 'Tasks',
+            label: 'Weeks',
             href: '#',
-            nextPage: 'TASKS'
+            nextPage: 'WEEKS'
         }, {
             active: true,
-            label: 'Edit Task',
+            label: 'Edit Week',
             href: '#'
         }
     ]

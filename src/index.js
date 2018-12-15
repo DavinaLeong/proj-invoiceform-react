@@ -5,12 +5,14 @@ import App from './App.jsx';
 
 import enums from './lib/enums';
 import data from './database/database.table';
+import WeekModel from './models/week/week.model';
 
 ReactDom.render(
     <App
         pageStates={enums.page}
         formStates={enums.form}
         
-        database={data} />,
+        newWeekSchema={WeekModel.newWeekSchema()}
+        weeks={WeekModel.findAllWithDaytypes()} />,
     document.getElementById('app')
 );
