@@ -16,7 +16,7 @@ class NewWeekPage extends Component {
         return (
             <form id="form-existing-week">
                 <div className="form-group row">
-                    <label for="title" className="col-sm-2 col-form-label">Title <span className="text-danger">*</span></label>
+                    <label htmlFor="title" className="col-sm-2 col-form-label">Title <span className="text-danger">*</span></label>
                     <div className="col-sm-8">
                         <input type="text" className="form-control form-control-lg"
                             id="title" placeholder="Week ##" value={this.formValues.title}
@@ -25,7 +25,7 @@ class NewWeekPage extends Component {
                 </div>
 
                 <div className="form-group row">
-                    <label for="company" className="col-sm-2 col-form-label">Company <span className="text-danger">*</span></label>
+                    <label htmlFor="company" className="col-sm-2 col-form-label">Company <span className="text-danger">*</span></label>
                     <div className="col-sm-8">
                         <div className="input-group">
                             <div className="input-group-prepend">
@@ -39,7 +39,7 @@ class NewWeekPage extends Component {
                 </div>
 
                 <div className="form-group row">
-                    <label for="Year" className="col-sm-2 col-form-label">Year <span className="text-danger">*</span></label>
+                    <label htmlFor="Year" className="col-sm-2 col-form-label">Year <span className="text-danger">*</span></label>
                     <div className="col-sm-8">
                         <div className="input-group">
                             <div className="input-group-prepend">
@@ -58,7 +58,7 @@ class NewWeekPage extends Component {
                         <h5 className="card-title">Entry</h5>
 
                         <div className="form-group row">
-                            <label for="date0" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
+                            <label htmlFor="date0" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <input type="text" className="form-control form-control-lg"
                                     id="date0" placeholder="DD MMM" required />
@@ -66,7 +66,7 @@ class NewWeekPage extends Component {
                         </div>
 
                         <div className="form-group row">
-                            <label for="type0" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
+                            <label htmlFor="type0" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
@@ -85,7 +85,7 @@ class NewWeekPage extends Component {
                         </div>
 
                         <div className="form-group row">
-                            <label for="tasks0" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
+                            <label htmlFor="tasks0" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <textarea id="tasks0" className="form-control" rows="8" required ></textarea>
                             </div>
@@ -99,14 +99,14 @@ class NewWeekPage extends Component {
                         <h5 className="card-title">Entry</h5>
 
                         <div className="form-group row">
-                            <label for="date1" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
+                            <label htmlFor="date1" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <input type="text" className="form-control form-control-lg" id="date1" placeholder="DD MMM" required />
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label for="type1" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
+                            <label htmlFor="type1" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
@@ -125,7 +125,7 @@ class NewWeekPage extends Component {
                         </div>
 
                         <div className="form-group row">
-                            <label for="tasks1" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
+                            <label htmlFor="tasks1" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <textarea id="tasks1" className="form-control" rows="8" required ></textarea>
                             </div>
