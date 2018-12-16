@@ -12,8 +12,7 @@ class NewWeekPage extends Component {
         };
     }
 
-    daysFields() {
-        const week = this.state.selectedWeek.current;
+    daysFields(week) {
         if (! week.days) {
             return null;
         }
@@ -25,7 +24,8 @@ class NewWeekPage extends Component {
             }
             if (day)
             return (
-                <div id={'entry'+index} className="card border-0 bg-secondary-light mb-2">
+                <div id={'entry'+index} className="card border-0 bg-secondary-light mb-2"
+                    key={day.uuid}>
                     <div className="card-body">
                         <button type="button" className="btn btn-outline-secondary btn-sm float-right"><i className="fas fa-times"></i></button>
                         <h5 className="card-title">Entry {index+1}</h5>
@@ -73,49 +73,61 @@ class NewWeekPage extends Component {
     }
 
     render() {
-        this.formValues = this.state.selectedWeek.current;
+        const week = this.state.selectedWeek.current;
+        let daysCount = 0;
+        if (week.days) {
+            daysCount = week.days.length;
+        }
 
         return (
             <form id="form-existing-week">
-                <div className="form-group row">
-                    <label htmlFor="title" className="col-sm-2 col-form-label">Title <span className="text-danger">*</span></label>
-                    <div className="col-sm-8">
-                        <input type="text" className="form-control form-control-lg"
-                            id="title" placeholder="Week ##" value={this.formValues.title}
-                            maxLength="50" required />
-                    </div>
-                </div>
-
-                <div className="form-group row">
-                    <label htmlFor="company" className="col-sm-2 col-form-label">Company <span className="text-danger">*</span></label>
-                    <div className="col-sm-8">
-                        <div className="input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="basic-addon1"><i className="fas fa-building"></i></span>
-                            </div>
-                            <input type="text" className="form-control" id="company"
-                                placeholder="Company" value={this.formValues.company}
+                <fieldset>
+                    <div className="form-group row">
+                        <label htmlFor="title" className="col-sm-2 col-form-label">Title <span className="text-danger">*</span></label>
+                        <div className="col-sm-8">
+                            <input type="text" className="form-control form-control-lg"
+                                id="title" placeholder="Week ##" value={week.title}
                                 maxLength="50" required />
                         </div>
                     </div>
-                </div>
 
-                <div className="form-group row">
-                    <label htmlFor="Year" className="col-sm-2 col-form-label">Year <span className="text-danger">*</span></label>
-                    <div className="col-sm-8">
-                        <div className="input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="basic-addon1"><i className="fas fa-calendar"></i></span>
+                    <div className="form-group row">
+                        <label htmlFor="company" className="col-sm-2 col-form-label">Company <span className="text-danger">*</span></label>
+                        <div className="col-sm-8">
+                            <div className="input-group">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="basic-addon1"><i className="fas fa-building"></i></span>
+                                </div>
+                                <input type="text" className="form-control" id="company"
+                                    placeholder="Company" value={week.company}
+                                    maxLength="50" required />
                             </div>
-                            <input type="number" className="form-control" id="Year"
-                                placeholder="Year" value={this.formValues.year}
-                                min="0" step="1" required />
                         </div>
                     </div>
-                </div>
+
+                    <div className="form-group row">
+                        <label htmlFor="Year" className="col-sm-2 col-form-label">Year <span className="text-danger">*</span></label>
+                        <div className="col-sm-8">
+                            <div className="input-group">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="basic-addon1"><i className="fas fa-calendar"></i></span>
+                                </div>
+                                <input type="number" className="form-control" id="Year"
+                                    placeholder="Year" value={week.year}
+                                    min="0" step="1" required />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
                 <br/>
 
-                {this.daysFields()}
+                <fieldset>
+                    <p className="text-left font-italic text-secondary
+                        small">Total entries: {daysCount}</p>
+                    {this.daysFields(week)}
+                    <p className="text-left font-italic text-secondary
+                        small">Total entries: {daysCount}</p>
+                </fieldset>
 
                 <div className="form-group row">
                     <div className="col-sm-12 text-right">
@@ -125,9 +137,12 @@ class NewWeekPage extends Component {
 
 
                 <div className="form-group row">
-                    <div className="col-sm-12 text-right">
-                        <a href="./tasks.html" className="btn btn-outline-secondary mr-1"><i className="fas fa-ban"></i> Cancel</a>
-                        <button type="button" className="btn btn-primary"><i className="fas fa-check"></i> Submit</button>
+                    <div className="col-sm-12">
+                        <p className="small text-danger float-left">* required</p>
+                        <div className="float-right text-right">
+                            <a href="./tasks.html" className="btn btn-outline-secondary mr-1"><i className="fas fa-ban"></i> Cancel</a>
+                            <button type="button" className="btn btn-primary"><i className="fas fa-check"></i> Submit</button>
+                        </div>
                     </div>
                 </div>
             </form>
