@@ -32,12 +32,40 @@ WeekModel.schema = {
  */
 WeekModel.newWeekSchema = function() {
     return {
+        uuid: uuid(),
         title: "Untitled",
         company: "???",
         year: "???",
         createdAt: "",
         updatedAt: "",
-        days: []
+        days: [
+            {
+                uuid: uuid(),
+                date: "",
+                type: "",
+                tasks: ""
+            }, {
+                uuid: uuid(),
+                date: "",
+                type: "",
+                tasks: ""
+            }, {
+                uuid: uuid(),
+                date: "",
+                type: "",
+                tasks: ""
+            }, {
+                uuid: uuid(),
+                date: "",
+                type: "",
+                tasks: " PROJ01-01: Finished"
+            }, {
+                uuid: uuid(),
+                date: "",
+                type: "",
+                tasks: ""
+            }
+        ]
     }
 }
 

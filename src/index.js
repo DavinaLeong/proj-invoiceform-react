@@ -6,6 +6,7 @@ import App from './App.jsx';
 import enums from './lib/enums';
 import data from './database/database.table';
 import WeekModel from './models/week/week.model';
+import DaytypeModel from './models/daytype/daytype.model.js';
 
 ReactDom.render(
     <App
@@ -13,6 +14,7 @@ ReactDom.render(
         formStates={enums.form}
         
         newWeekSchema={WeekModel.newWeekSchema()}
-        weeks={WeekModel.findAllWithDaytypes()} />,
+        weeks={WeekModel.findAllWithDaytypes()}
+        daytypes={DaytypeModel.findAll()} />,
     document.getElementById('app')
 );

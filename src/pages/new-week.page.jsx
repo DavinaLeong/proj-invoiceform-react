@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import DaytypeModel from './../models/daytype/daytype.model';
+
 class NewWeekPage extends Component {
 
     constructor(props) {
@@ -8,6 +10,66 @@ class NewWeekPage extends Component {
         this.state = {
             selectedWeek: this.props.selectedWeek
         };
+    }
+
+    daysFields() {
+        const week = this.state.selectedWeek.current;
+        if (! week.days) {
+            return null;
+        }
+
+        return week.days.map((day, index) => {
+            let daytype = DaytypeModel.findByUuid('e6b2ba74-7a1a-4d72-a2e1-85e5edbbdf49');
+            if (day.daytype) {
+                daytype = day.daytype;
+            }
+            if (day)
+            return (
+                <div id={'entry'+index} className="card border-0 bg-secondary-light mb-2">
+                    <div className="card-body">
+                        <button type="button" className="btn btn-outline-secondary btn-sm float-right"><i className="fas fa-times"></i></button>
+                        <h5 className="card-title">Entry {index+1}</h5>
+
+                        <div className="form-group row">
+                            <label htmlFor="date0" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
+                            <div className="col-sm-8">
+                                <input type="text" className="form-control form-control-lg"
+                                    id="date0" placeholder="DD MMM" value={day.date} required />
+                            </div>
+                        </div>
+
+                        <div className="form-group row">
+                            <label htmlFor="type0" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
+                            <div className="col-sm-8">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text" id="basic-addon1"><i className={daytype.icon}></i></span>
+                                    </div>
+                                    <select type="text" className="form-control" id="type0"
+                                        required value={daytype.value}>
+                                        {this.daytypeOptions()}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="form-group row">
+                            <label htmlFor="tasks0" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
+                            <div className="col-sm-8">
+                                <textarea id="tasks0" className="form-control" rows="8"
+                                    required value={day.tasks}></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        })
+    }
+
+    daytypeOptions() {
+        return this.props.daytypes.map((daytype, index) => {
+            return (<option value={daytype.value} key={daytype.uuid}>{daytype.label}</option>);
+        });
     }
 
     render() {
@@ -52,86 +114,8 @@ class NewWeekPage extends Component {
                     </div>
                 </div>
                 <br/>
-                
-                <div id="entry0" className="card border-0 bg-secondary-light mb-2">
-                    <div className="card-body">
-                        <h5 className="card-title">Entry</h5>
 
-                        <div className="form-group row">
-                            <label htmlFor="date0" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
-                            <div className="col-sm-8">
-                                <input type="text" className="form-control form-control-lg"
-                                    id="date0" placeholder="DD MMM" required />
-                            </div>
-                        </div>
-
-                        <div className="form-group row">
-                            <label htmlFor="type0" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
-                            <div className="col-sm-8">
-                                <div className="input-group">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text" id="basic-addon1"><i className="fas fa-question"></i></span>
-                                    </div>
-                                    <select type="text" className="form-control" id="type0" required>
-                                        <option>Undefined</option>
-                                        <option>Work Day</option>
-                                        <option>Public Holiday</option>
-                                        <option>Company Events</option>
-                                        <option>Annual Leave</option>
-                                        <option>Medical Leave</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="form-group row">
-                            <label htmlFor="tasks0" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
-                            <div className="col-sm-8">
-                                <textarea id="tasks0" className="form-control" rows="8" required ></textarea>
-                            </div>
-                        </div>
-                    </div>{/* ./card-body */}
-                </div>{/* ./entry0 */}
-
-                <div id="entry1" className="card border-0 bg-secondary-light mb-2">
-                    <div className="card-body">
-                        <button type="button" className="btn btn-outline-secondary btn-sm float-right"><i className="fas fa-times"></i></button>
-                        <h5 className="card-title">Entry</h5>
-
-                        <div className="form-group row">
-                            <label htmlFor="date1" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
-                            <div className="col-sm-8">
-                                <input type="text" className="form-control form-control-lg" id="date1" placeholder="DD MMM" required />
-                            </div>
-                        </div>
-
-                        <div className="form-group row">
-                            <label htmlFor="type1" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
-                            <div className="col-sm-8">
-                                <div className="input-group">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text" id="basic-addon1"><i className="fas fa-question"></i></span>
-                                    </div>
-                                    <select type="text" className="form-control" id="type1" required>
-                                        <option selected>Undefined</option>
-                                        <option>Work Day</option>
-                                        <option>Public Holiday</option>
-                                        <option>Company Events</option>
-                                        <option>Annual Leave</option>
-                                        <option>Medical Leave</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="form-group row">
-                            <label htmlFor="tasks1" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
-                            <div className="col-sm-8">
-                                <textarea id="tasks1" className="form-control" rows="8" required ></textarea>
-                            </div>
-                        </div>
-                    </div>{/* ./card-body */}
-                </div>{/* ./entry0 */}
+                {this.daysFields()}
 
                 <div className="form-group row">
                     <div className="col-sm-12 text-right">

@@ -79,10 +79,12 @@ class App extends Component {
 
             case this.props.pageStates.CREATE_WEEK:
                 return <NewWeekPage
+                    daytypes={this.props.daytypes}
                     selectedWeek={this.state.selectedWeek} />;
 
             case this.props.pageStates.EDIT_WEEK:
                 return <EditWeekPage
+                    daytypes={this.props.daytypes}
                     selectedWeek={this.state.selectedWeek} />;
 
         }
