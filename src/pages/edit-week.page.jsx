@@ -4,9 +4,9 @@ class EditWeekPage extends Component {
 
     render() {
         return (
-            <div>
+            <section id="page-week-edit">
                 <h3>Edit Week</h3>
-            </div>
+            </section>
         );
     }
 

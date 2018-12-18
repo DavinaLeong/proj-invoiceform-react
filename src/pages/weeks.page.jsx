@@ -78,11 +78,17 @@ class WeeksPage extends Component {
     }
 
     render() {
+        const weeksCount = this.props.weeks.length;
+
         return (
-            <div className="row">
-                {this.newWeekCard()}
-                {this.existingWeekCards()}
-            </div>
+            <section id="page-weeks">
+                <p className="col-6 text-right text-secondary font-italic small">Total entries: {weeksCount}</p>
+                <div className="row">
+                    {this.newWeekCard()}
+                    {this.existingWeekCards()}
+                </div>
+                <p className="col-6 text-right text-secondary font-italic small">Total entries: {weeksCount}</p>
+            </section>
         );
     }
 

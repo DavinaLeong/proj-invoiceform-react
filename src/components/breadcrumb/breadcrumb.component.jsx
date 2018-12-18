@@ -27,7 +27,7 @@ class BreadcrumbComponent extends Component {
     
     render() {
         return (
-            <nav className="mt-1" aria-label="breadcrumb">
+            <nav id="component-breadcrumb" className="mt-1" aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     { this.breadcrumbItems() }
                 </ol>

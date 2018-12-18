@@ -92,7 +92,7 @@ class App extends Component {
 
     render() {
         return (
-            <div id="main">
+            <div id="container-app">
                 <BreadcrumbComponent
                     pageStates={this.props.pageStates}
                     currentPage={this.state.page.current}

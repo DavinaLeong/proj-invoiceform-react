@@ -8,8 +8,9 @@ class TitleComponent extends Component {
         const page = data[this.props.page];
 
         return (
-            <h2 className="mb-3">
-                <i className={page.icon}></i> {page.label}</h2>
+            <h2 id="component-title" className="mb-3">
+                <i className={page.icon}></i> {page.label}
+            </h2>
         );
     }
 
