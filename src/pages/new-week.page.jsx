@@ -122,18 +122,20 @@ class NewWeekPage extends Component {
                 <br/>
 
                 <fieldset>
-                    <p className="text-left font-italic text-secondary
-                        small">Total entries: {daysCount}</p>
-                    {this.daysFields(week)}
-                    <p className="text-left font-italic text-secondary
-                        small">Total entries: {daysCount}</p>
-                </fieldset>
-
-                <div className="form-group row">
-                    <div className="col-sm-12 text-right">
-                        <button type="button" className="btn btn-outline-primary btn-sm"><i className="fas fa-plus"></i></button>
+                    <div class="row mb-2">
+                        <div className="col-6 text-left text-secondary font-italic small">Total entries: {daysCount}</div>
+                        <div className="col-6 text-right">
+                            <button type="button" className="btn btn-outline-primary btn-sm"><i className="fas fa-plus"></i></button>
+                        </div>
                     </div>
-                </div>
+                    {this.daysFields(week)}
+                    <div class="row mb-2">
+                        <div className="col-6 text-left text-secondary font-italic small">Total entries: {daysCount}</div>
+                        <div className="col-6 text-right">
+                            <button type="button" className="btn btn-outline-primary btn-sm"><i className="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
 
 
                 <div className="form-group row">
