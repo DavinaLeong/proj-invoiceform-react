@@ -24,29 +24,29 @@ class NewWeekPage extends Component {
             }
             if (day)
             return (
-                <div id={'entry'+index} className="card border-0 bg-secondary-light mb-2"
+                <div id={'entry'+index} className="card border-0 bg-light mb-2"
                     key={day.uuid}>
                     <div className="card-body">
                         <button type="button" className="btn btn-outline-secondary btn-sm float-right"><i className="fas fa-times"></i></button>
                         <h5 className="card-title">Entry {index+1}</h5>
 
                         <div className="form-group row">
-                            <label htmlFor="date0" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
+                            <label htmlFor={'date'+0} className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <input type="text" className="form-control form-control-lg"
-                                    id="date0" placeholder="DD MMM" value={day.date} required />
+                                    id={'date'+0} placeholder="DD MMM" value={day.date} required />
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label htmlFor="type0" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
+                            <label for={'type'+0} className="col-sm-2 col-form-label">Day Type <span class="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
-                                        <span className="input-group-text" id="basic-addon1"><i className={daytype.icon}></i></span>
+                                        <span className="input-group-text" id={'type-addon'+0}><i className={daytype.icon}></i></span>
                                     </div>
-                                    <select type="text" className="form-control" id="type0"
-                                        required value={daytype.value}>
+                                    <select type="text" className="form-control" id={'type'+0} required value={daytype.value}
+                                        aria-describedby={'type'+0}>
                                         {this.daytypeOptions()}
                                     </select>
                                 </div>
@@ -87,7 +87,7 @@ class NewWeekPage extends Component {
                         <div className="col-sm-8">
                             <input type="text" className="form-control form-control-lg"
                                 id="title" placeholder="Week ##" value={week.title}
-                                maxLength="50" required />
+                                maxLength="50" required/>
                         </div>
                     </div>
 
@@ -96,11 +96,11 @@ class NewWeekPage extends Component {
                         <div className="col-sm-8">
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1"><i className="fas fa-building"></i></span>
+                                    <span className="input-group-text" id="company-addon"><i className="fas fa-building"></i></span>
                                 </div>
                                 <input type="text" className="form-control" id="company"
                                     placeholder="Company" value={week.company}
-                                    maxLength="50" required />
+                                    maxLength="50" required aria-describedby="company-addon"/>
                             </div>
                         </div>
                     </div>
@@ -110,11 +110,11 @@ class NewWeekPage extends Component {
                         <div className="col-sm-8">
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1"><i className="fas fa-calendar"></i></span>
+                                    <span className="input-group-text" id="year-addon"><i className="fas fa-calendar"></i></span>
                                 </div>
                                 <input type="number" className="form-control" id="Year"
                                     placeholder="Year" value={week.year}
-                                    min="0" step="1" required />
+                                    min="0" step="1" required aria-describedby="year-addon"/>
                             </div>
                         </div>
                     </div>
