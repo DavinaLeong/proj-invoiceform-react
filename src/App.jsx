@@ -9,7 +9,7 @@ import NewWeekPage from './pages/new-week.page.jsx';
 import EditWeekPage from './pages/edit-week.page.jsx';
 
 // import DaytypeModel from './models/daytype/daytype.model';
-// import WeekModel from './models/week/week.model';
+import WeekModel from './models/week/week.model';
 
 /**
  * The parent component which holds and monitors all necessary
@@ -34,6 +34,7 @@ class App extends Component {
 
         this.changePageHandler = this.changePageHandler.bind(this);
         this.changeSelectedWeekHandler = this.changeSelectedWeekHandler.bind(this);
+        this.createWeek = this.createWeek.bind(this);
     }
 
     changePageHandler(page) {
@@ -68,6 +69,12 @@ class App extends Component {
         });
     }
 
+    createWeek(selectedWeek) {
+        this.setState({
+            weeks: this.state.weeks.push(selectedWeek)
+        });
+    }
+
     currentPage() {
         switch(this.state.page.current) {
             case this.props.pageStates.WEEKS:
@@ -80,7 +87,8 @@ class App extends Component {
             case this.props.pageStates.CREATE_WEEK:
                 return <NewWeekPage
                     daytypes={this.props.daytypes}
-                    selectedWeek={this.state.selectedWeek} />;
+                    selectedWeek={this.state.selectedWeek}
+                    createWeek={this.createWeek} />;
 
             case this.props.pageStates.EDIT_WEEK:
                 return <EditWeekPage
@@ -92,7 +100,7 @@ class App extends Component {
 
     render() {
         return (
-            <div id="container-app">
+            <div id="main">
                 <BreadcrumbComponent
                     pageStates={this.props.pageStates}
                     currentPage={this.state.page.current}

@@ -15,7 +15,7 @@ class LegendComponent extends Component {
     
     render() {
         return (
-            <p id="component-legend" className="border-bottom pb-1">
+            <p className="border-bottom pb-1">
                 {this.legendItems()}
             </p>
         );
