@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 import DaytypeModel from './../models/daytype/daytype.model';
+import formats from './../lib/formats';
 
 class NewWeekPage extends Component {
 
@@ -14,8 +15,20 @@ class NewWeekPage extends Component {
     }
 
     titleChangeHandler(event) {
+        this.updateSelectedWeek('title', event.target.value);
+    }
+
+    companyChangeHandler(event) {
+        this.updateSelectedWeek('company', event.target.value);
+    }
+
+    yearChangeHandler(event) {
+        this.updateSelectedWeek('year', event.target.value);
+    }
+
+    updateSelectedWeek(key, value) {
         const selectedWeek = this.state.selectedWeek;
-        selectedWeek.title = event.target.value;
+        selectedWeek[key] = value;
 
         this.setState({ selectedWeek: selectedWeek });
     }
@@ -30,10 +43,8 @@ class NewWeekPage extends Component {
             if (day.daytype) {
                 daytype = day.daytype;
             }
-            if (day)
             return (
-                <div id={'entry'+index} className="card border-0 bg-secondary-light mb-2"
-                    key={day.uuid}>
+                <div id={'entry'+index} className="card border-0 bg-secondary-light mb-2" key={day.uuid}>
                     <div className="card-body">
                         <button type="button" className="btn btn-outline-secondary btn-sm float-right"><i className="fas fa-times"></i></button>
                         <h5 className="card-title">Entry {index+1}</h5>
@@ -94,9 +105,9 @@ class NewWeekPage extends Component {
                     <div className="form-group row">
                         <label htmlFor="title" className="col-sm-2 col-form-label">Title <span className="text-danger">*</span></label>
                         <div className="col-sm-8">
-                            <input type="text" className="form-control form-control-lg"
-                                id="title" placeholder="Week ##" value={week.title}
-                                maxLength="50" required onChange={this.titleChangeHandler.bind(this)}/>
+                            <input type="text" className="form-control form-control-lg" id="title" placeholder="Week ##"
+                                value={week.title} maxLength="50" required
+                                onChange={this.titleChangeHandler.bind(this)}/>
                         </div>
                     </div>
 
@@ -105,11 +116,11 @@ class NewWeekPage extends Component {
                         <div className="col-sm-8">
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1"><i className="fas fa-building"></i></span>
+                                    <span className="input-group-text" id="comapny-addon"><i className="fas fa-building"></i></span>
                                 </div>
-                                <input type="text" className="form-control" id="company"
-                                    placeholder="Company" value={week.company}
-                                    maxLength="50" required />
+                                <input type="text" className="form-control" id="company" placeholder="Company"
+                                    value={week.company} maxLength="50" required
+                                    onChange={this.companyChangeHandler.bind(this)}/>
                             </div>
                         </div>
                     </div>
@@ -119,11 +130,11 @@ class NewWeekPage extends Component {
                         <div className="col-sm-8">
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1"><i className="fas fa-calendar"></i></span>
+                                    <span className="input-group-text" id="year-addon"><i className="fas fa-calendar"></i></span>
                                 </div>
-                                <input type="number" className="form-control" id="Year"
-                                    placeholder="Year" value={week.year}
-                                    min="0" step="1" required />
+                                <input type="number" className="form-control" id="Year" placeholder="Year"
+                                    value={week.year} min="0" step="1" required
+                                    onChange={this.yearChangeHandler.bind(this)}/>
                             </div>
                         </div>
                     </div>

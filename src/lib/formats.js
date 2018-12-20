@@ -3,5 +3,6 @@ export default {
     priceAlt: "0.00",
     date: "DD-MM-YYYY",
     dateAlt: "DD MMM YYYY",
-    dbDate: "YYYY-MM-DD HH:mm:ss"
+    dbDate: "YYYY-MM-DD HH:mm:ss",
+    year: "YYYY"
 };

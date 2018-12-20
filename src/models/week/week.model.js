@@ -31,11 +31,15 @@ WeekModel.schema = {
  * Returns the schema of a new week object.
  */
 WeekModel.newWeekSchema = function() {
+    const weeks = WeekModel.findAll();
+    const lastWeekRecord = weeks[0];
+    const lastWeekNumber = /^[Ww]eek (\d+)$/.exec(lastWeekRecord.title)[1];
+
     return {
         uuid: uuid(),
-        title: "Untitled",
-        company: "???",
-        year: "???",
+        title: "Week " + (Number(lastWeekNumber) + 1),
+        company: "The Pixel Age",
+        year: moment().format(formats.year),
         createdAt: "",
         updatedAt: "",
         days: [
