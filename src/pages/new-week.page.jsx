@@ -13,7 +13,14 @@ class NewWeekPage extends Component {
         };
     }
 
-    daysFields(week) {
+    titleChangeHandler(event) {
+        const selectedWeek = this.state.selectedWeek;
+        selectedWeek.title = event.target.value;
+
+        this.setState({ selectedWeek: selectedWeek });
+    }
+
+    renderDaysFields(week) {
         if (! week.days) {
             return null;
         }
@@ -48,7 +55,7 @@ class NewWeekPage extends Component {
                                     </div>
                                     <select type="text" className="form-control" id="type0"
                                         required value={daytype.value}>
-                                        {this.daytypeOptions()}
+                                        {this.renderDaytypeOptions()}
                                     </select>
                                 </div>
                             </div>
@@ -67,17 +74,10 @@ class NewWeekPage extends Component {
         })
     }
 
-    daytypeOptions() {
+    renderDaytypeOptions() {
         return this.props.daytypes.map((daytype, index) => {
             return (<option value={daytype.value} key={daytype.uuid}>{daytype.label}</option>);
         });
-    }
-
-    titleChangeHandler(event) {
-        const selectedWeek = this.state.selectedWeek;
-        selectedWeek.title = event.target.value;
-
-        this.setState({ selectedWeek: selectedWeek });
     }
 
     render() {
@@ -133,7 +133,7 @@ class NewWeekPage extends Component {
                 <fieldset>
                     <p className="text-left font-italic text-secondary
                         small">Total entries: {daysCount}</p>
-                    {this.daysFields(week)}
+                    {this.renderDaysFields(week)}
                     <p className="text-left font-italic text-secondary
                         small">Total entries: {daysCount}</p>
                 </fieldset>

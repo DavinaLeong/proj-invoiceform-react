@@ -75,7 +75,7 @@ class App extends Component {
         });
     }
 
-    currentPage() {
+    renderCurrentPage() {
         switch(this.state.page.current) {
             case this.props.pageStates.WEEKS:
                 return <WeeksPage
@@ -109,7 +109,7 @@ class App extends Component {
                 <TitleComponent page={this.state.page.current} />
                 <LegendComponent />
 
-                {this.currentPage()}
+                {this.renderCurrentPage()}
             </div>
         );
     }

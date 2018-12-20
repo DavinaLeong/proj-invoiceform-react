@@ -19,7 +19,7 @@ class WeeksPage extends Component {
         // this.props.changeSelectedWeekHandler(weekUuid);
     }
 
-    newWeekCard() {
+    renderNewWeekCard() {
         return (
             <div className="col-3 mb-3">
                 <div className="card border-0 bg-success text-light clickable" onClick={this.gotoNewWeekHandler}>
@@ -42,7 +42,7 @@ class WeeksPage extends Component {
         );
     }
 
-    existingWeekCards() {
+    renderExistingWeekCards() {
         return this.props.weeks.map((week, index) => {
             return (
                 <div className="col-3 mb-3" key={week.uuid}>
@@ -80,8 +80,8 @@ class WeeksPage extends Component {
     render() {
         return (
             <div className="row">
-                {this.newWeekCard()}
-                {this.existingWeekCards()}
+                {this.renderNewWeekCard()}
+                {this.renderExistingWeekCards()}
             </div>
         );
     }
