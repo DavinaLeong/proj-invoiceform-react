@@ -33,6 +33,17 @@ class NewWeekPage extends Component {
         this.setState({ selectedWeek: selectedWeek });
     }
 
+    tasksChangeHandler(dayIndex, event) {
+        this.updateDay(dayIndex, 'tasks', event.target.value)
+    }
+
+    updateDay(dayIndex, key, value) {
+        const selectedWeek = this.state.selectedWeek;
+        selectedWeek.days[dayIndex][key] = value;
+
+        this.setState({ selectedWeek: selectedWeek });
+    }
+
     renderDaysFields(week) {
         if (! week.days) {
             return null;
@@ -50,21 +61,21 @@ class NewWeekPage extends Component {
                         <h5 className="card-title">Entry {index+1}</h5>
 
                         <div className="form-group row">
-                            <label htmlFor="date0" className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
+                            <label htmlFor={'date'+0} className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <input type="text" className="form-control form-control-lg"
-                                    id="date0" placeholder="DD MMM" value={day.date} required />
+                                    id={'date'+0} placeholder="DD MMM" value={day.date} required />
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label htmlFor="type0" className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
+                            <label htmlFor={'type'+0} className="col-sm-2 col-form-label">Day Type <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
                                 <div className="input-group">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" id="basic-addon1"><i className={daytype.icon}></i></span>
                                     </div>
-                                    <select type="text" className="form-control" id="type0"
+                                    <select type="text" className="form-control" id={'type'+0}
                                         required value={daytype.value}>
                                         {this.renderDaytypeOptions()}
                                     </select>
@@ -73,10 +84,10 @@ class NewWeekPage extends Component {
                         </div>
 
                         <div className="form-group row">
-                            <label htmlFor="tasks0" className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
+                            <label htmlFor={'tasks'+0} className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
-                                <textarea id="tasks0" className="form-control" rows="8"
-                                    required value={day.tasks}></textarea>
+                                <textarea id={'tasks'+0} className="form-control" rows="8" required value={day.tasks}
+                                    onChange={this.tasksChangeHandler.bind(this, index)}></textarea>
                             </div>
                         </div>
                     </div>

@@ -62,7 +62,7 @@ WeekModel.newWeekSchema = function() {
                 uuid: uuid(),
                 date: "",
                 type: "",
-                tasks: " PROJ01-01: Finished"
+                tasks: ""
             }, {
                 uuid: uuid(),
                 date: "",
