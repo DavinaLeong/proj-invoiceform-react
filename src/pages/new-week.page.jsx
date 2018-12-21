@@ -37,6 +37,14 @@ class NewWeekPage extends Component {
         this.updateDay(dayIndex, 'date', event.target.value);
     }
 
+    daytypeChangeHandler(dayIndex, event) {
+        const selectedWeek = this.state.selectedWeek;
+        selectedWeek.days[dayIndex].type = event.target.value;
+        selectedWeek.days[dayIndex].daytype = DaytypeModel.findOne(event.target.value, 'value');
+
+        this.setState({ selectedWeek: selectedWeek });
+    }
+
     tasksChangeHandler(dayIndex, event) {
         this.updateDay(dayIndex, 'tasks', event.target.value)
     }
@@ -80,8 +88,8 @@ class NewWeekPage extends Component {
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" id="basic-addon1"><i className={daytype.icon}></i></span>
                                     </div>
-                                    <select type="text" className="form-control" id={'type'+0}
-                                        required value={daytype.value}>
+                                    <select type="text" className="form-control" id={'type'+0} value={daytype.value}
+                                        required onChange={this.daytypeChangeHandler.bind(this, index)}>
                                         {this.renderDaytypeOptions()}
                                     </select>
                                 </div>

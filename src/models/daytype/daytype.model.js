@@ -50,6 +50,7 @@ DaytypeModel.findByUuid = function(uuid) {
  * @param {string|number} key 
  */
 DaytypeModel.findOne = function(value, key) {
+    console.log(value, key);
     if (! value || typeof value === 'undefined' ||
         ! key || typeof key === 'undefined') {
         console.error('DaytypeModel.findOne(): Parameters undefined.');
