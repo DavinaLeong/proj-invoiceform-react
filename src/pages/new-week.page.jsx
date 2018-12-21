@@ -33,6 +33,10 @@ class NewWeekPage extends Component {
         this.setState({ selectedWeek: selectedWeek });
     }
 
+    dateChangeHandler(dayIndex, event) {
+        this.updateDay(dayIndex, 'date', event.target.value);
+    }
+
     tasksChangeHandler(dayIndex, event) {
         this.updateDay(dayIndex, 'tasks', event.target.value)
     }
@@ -63,8 +67,9 @@ class NewWeekPage extends Component {
                         <div className="form-group row">
                             <label htmlFor={'date'+0} className="col-sm-2 col-form-label">Date <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
-                                <input type="text" className="form-control form-control-lg"
-                                    id={'date'+0} placeholder="DD MMM" value={day.date} required />
+                                <input id={'date'+0} type="date" className="form-control form-control-lg"
+                                    placeholder="DD MMM" value={day.date} required
+                                    onChange={this.dateChangeHandler.bind(this, index)}/>
                             </div>
                         </div>
 
@@ -86,7 +91,7 @@ class NewWeekPage extends Component {
                         <div className="form-group row">
                             <label htmlFor={'tasks'+0} className="col-sm-2 col-form-label">Tasks <span className="text-danger">*</span></label>
                             <div className="col-sm-8">
-                                <textarea id={'tasks'+0} className="form-control" rows="8" required value={day.tasks}
+                                <textarea id={'tasks'+0} className="form-control" rows="8" value={day.tasks} required
                                     onChange={this.tasksChangeHandler.bind(this, index)}></textarea>
                             </div>
                         </div>

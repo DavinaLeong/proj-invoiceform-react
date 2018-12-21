@@ -4,5 +4,6 @@ export default {
     date: "DD-MM-YYYY",
     dateAlt: "DD MMM YYYY",
     dbDate: "YYYY-MM-DD HH:mm:ss",
+    entryDate: "DD MMM",
     year: "YYYY"
 };
