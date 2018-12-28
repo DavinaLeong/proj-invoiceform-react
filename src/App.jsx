@@ -34,7 +34,8 @@ class App extends Component {
 
         this.changePageHandler = this.changePageHandler.bind(this);
         this.changeSelectedWeekHandler = this.changeSelectedWeekHandler.bind(this);
-        this.createWeek = this.createWeek.bind(this);
+        this.cancelNewWeekHandler = this.cancelNewWeekHandler.bind(this);
+        this.submitNewWeekHandler = this.submitNewWeekHandler.bind(this);
     }
 
     changePageHandler(page) {
@@ -69,9 +70,39 @@ class App extends Component {
         });
     }
 
-    createWeek(selectedWeek) {
+    cancelNewWeekHandler() {
+        console.log('cancelNewWeekHandler');
+        const oldCurrentPage = this.state.page.current;
+
         this.setState({
-            weeks: this.state.weeks.push(selectedWeek)
+            selectedWeek: {
+                previous: this.props.newWeekSchema,
+                current: this.props.newWeekSchema
+            },
+            page: {
+                previous: oldCurrentPage,
+                current: this.props.pageStates.WEEKS
+            }
+        });
+    }
+
+    submitNewWeekHandler(selectedWeek) {
+        console.log('submitNewWeekHandler');
+        const weeks = this.state.weeks;
+        weeks.unshift(selectedWeek);
+        console.log('APP\n', weeks);
+        const oldCurrentPage = this.state.page.current;
+
+        this.setState({
+            weeks: WeekModel.findAllWithDaytypes(),
+            selectedWeek: {
+                previous: this.props.newWeekSchema,
+                current: this.props.newWeekSchema
+            },
+            page: {
+                previous: oldCurrentPage,
+                current: this.props.pageStates.WEEKS
+            }
         });
     }
 
@@ -88,7 +119,10 @@ class App extends Component {
                 return <NewWeekPage
                     daytypes={this.props.daytypes}
                     selectedWeek={this.state.selectedWeek}
-                    createWeek={this.createWeek} />;
+                    pageStates={this.props.pageStates}
+                    changePageHandler={this.changePageHandler}
+                    cancelNewWeekHandler={this.cancelNewWeekHandler}
+                    submitNewWeekHandler={this.submitNewWeekHandler} />;
 
             case this.props.pageStates.EDIT_WEEK:
                 return <EditWeekPage

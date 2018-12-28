@@ -49,6 +49,12 @@ class NewWeekPage extends Component {
         this.updateDay(dayIndex, 'tasks', event.target.value)
     }
 
+    submitNewWeekHandler() {
+        this.props.submitNewWeekHandler(
+            this.state.selectedWeek
+        );
+    }
+
     updateDay(dayIndex, key, value) {
         const selectedWeek = this.state.selectedWeek;
         selectedWeek.days[dayIndex][key] = value;
@@ -184,8 +190,10 @@ class NewWeekPage extends Component {
                     <div className="col-sm-12">
                         <p className="small text-danger float-left">* required</p>
                         <div className="float-right text-right">
-                            <a href="./tasks.html" className="btn btn-outline-secondary mr-1"><i className="fas fa-ban"></i> Cancel</a>
-                            <button type="button" className="btn btn-primary"><i className="fas fa-check"></i> Submit</button>
+                            <button type="button" className="btn btn-outline-secondary mr-1"
+                                onClick={this.props.cancelNewWeekHandler}><i className="fas fa-ban"></i> Cancel</button>
+                            <button type="button" className="btn btn-primary"
+                                onClick={this.submitNewWeekHandler.bind(this)}><i className="fas fa-check"></i> Submit</button>
                         </div>
                     </div>
                 </div>

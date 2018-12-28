@@ -46,27 +46,27 @@ WeekModel.newWeekSchema = function() {
             {
                 uuid: uuid(),
                 date: "",
-                type: "",
+                type: "UNDEFINED",
                 tasks: ""
             }, {
                 uuid: uuid(),
                 date: "",
-                type: "",
+                type: "UNDEFINED",
                 tasks: ""
             }, {
                 uuid: uuid(),
                 date: "",
-                type: "",
+                type: "UNDEFINED",
                 tasks: ""
             }, {
                 uuid: uuid(),
                 date: "",
-                type: "",
+                type: "UNDEFINED",
                 tasks: ""
             }, {
                 uuid: uuid(),
                 date: "",
-                type: "",
+                type: "UNDEFINED",
                 tasks: ""
             }
         ]
@@ -124,7 +124,6 @@ WeekModel.findOne = function(value, key) {
         return null;
     }
     
-    console.log(value, key);
     return data.find(week => week[key] === value);
 }
 

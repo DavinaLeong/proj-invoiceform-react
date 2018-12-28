@@ -44,7 +44,7 @@ export default [
         uuid: "e6b2ba74-7a1a-4d72-a2e1-85e5edbbdf49",
         label: "Undefined",
         icon: "fas fa-question mr-1",
-        value: "",
+        value: "UNDEFINED",
         createdAt: createdAt,
         updatedAt: updatedAt
     }
